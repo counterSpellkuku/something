@@ -23,13 +23,13 @@ namespace Entity
         [SerializeField] public float acceleration = 50f;
         [SerializeField] public float deceleration = 50f;
         [SerializeField] protected Vector2 currentVelocity;
+
         protected virtual Color damageColor => Color.white;
 
         private bool onknockBack;
         private float knockBackDuration;
         
-        public void Awake()
-        {
+        public void Awake() {
             rigid = GetComponent<Rigidbody2D>();
             col = GetComponent<BoxCollider2D>();
             animator = GetComponent<Animator>();
