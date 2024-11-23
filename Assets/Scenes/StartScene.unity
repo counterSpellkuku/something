@@ -29304,32 +29304,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5675171763142871889, guid: c6b0a944cfe2441cf896b80800316d10, type: 3}
       propertyPath: m_Size.x
-      value: 1.1719998
+      value: 1.2002983
       objectReference: {fileID: 0}
     - target: {fileID: 5675171763142871889, guid: c6b0a944cfe2441cf896b80800316d10, type: 3}
       propertyPath: m_Size.y
-      value: 1.6090746
+      value: 1.2694931
       objectReference: {fileID: 0}
     - target: {fileID: 5675171763142871889, guid: c6b0a944cfe2441cf896b80800316d10, type: 3}
       propertyPath: m_Offset.x
-      value: -0.05586928
+      value: -0.003988743
       objectReference: {fileID: 0}
     - target: {fileID: 5675171763142871889, guid: c6b0a944cfe2441cf896b80800316d10, type: 3}
       propertyPath: m_Offset.y
-      value: -0.04527235
-      objectReference: {fileID: 0}
-    - target: {fileID: 5675171763142871889, guid: c6b0a944cfe2441cf896b80800316d10, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+      value: 0.61502457
       objectReference: {fileID: 0}
     - target: {fileID: 6847930924364077570, guid: c6b0a944cfe2441cf896b80800316d10, type: 3}
       propertyPath: dialogueSystem
       value: 
       objectReference: {fileID: 1376145399}
-    - target: {fileID: 6847930924364077570, guid: c6b0a944cfe2441cf896b80800316d10, type: 3}
-      propertyPath: targetLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 6847930924364077570, guid: c6b0a944cfe2441cf896b80800316d10, type: 3}
       propertyPath: dialogueSystemObject
       value: 
