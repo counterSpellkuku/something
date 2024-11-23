@@ -31,10 +31,7 @@ namespace Entity.Player
         }
 
         private void Move() {
-            
-            
             Vector2 targetVelocity = moveInput * speed;
-            Debug.Log(targetVelocity);
             
             if (moveInput != Vector2.zero)
             {
