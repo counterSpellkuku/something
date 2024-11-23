@@ -11,10 +11,9 @@ namespace Entity.Player {
         public float inSkill, atkCool, preventInput, stopMove;
         protected override Color damageColor => Color.red;
         public int facing;
+        public float baseDamage;
         public bool isMoving;
         public Weapon heldWeapon;
-        [SerializeField]
-        Animator shadowAnim;
 
         private HashSet<KeyCode> keys;
         
@@ -107,11 +106,38 @@ namespace Entity.Player {
             } else if (facing == -1) {
                 render.flipX = true;
             }
+
+            if (heldWeapon != null) {
+                heldWeapon.animator.SetBool("isMoving", isMoving);
+                if (moveInput.y > 0) {
+                    heldWeapon.animator.SetInteger("faceY", 1);
+                } else if (moveInput.y < 0) {
+                    heldWeapon.animator.SetInteger("faceY", -1);
+                } else {
+                    heldWeapon.animator.SetInteger("faceY", 0);
+                }
+
+                if (moveInput.x > 0) {
+                    heldWeapon.animator.SetBool("toRight", true);
+                    facing = 1;
+                } else if (moveInput.x < 0) {
+                    heldWeapon.animator.SetBool("toRight", true);
+                    facing = -1;
+                } else {
+                    heldWeapon.animator.SetBool("toRight", false);
+                }
+
+                if (facing == 1) {
+                    heldWeapon.render.flipX = false;
+                } else if (facing == -1) {
+                    heldWeapon.render.flipX = true;
+                }
+            }
         }
 
         protected override void OnHurt(float damage, BaseEntity attacker, ref bool cancel)
         {
-            CamManager.main.Shake(0.5f);
+            CamManager.main.Shake(0.2f);
         }
 
         private new void FixedUpdate() {

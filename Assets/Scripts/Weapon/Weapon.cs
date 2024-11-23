@@ -6,6 +6,7 @@ namespace System.Weapon {
     {
         public SpriteRenderer render;
         public PlayerController attatcher;
+        public Animator animator;
         public Collider2D col;
         public ContactFilter2D filter;
 
@@ -15,9 +16,12 @@ namespace System.Weapon {
         void Awake() {
             render = GetComponent<SpriteRenderer>();
             col = GetComponent<Collider2D>();
+            animator = GetComponent<Animator>();
         }
         void Update() {
             OnUpdateTick();
+
+            animator.SetBool("isEmpty", attatcher == null);
 
             if (attatcher == null) {
                 FindingPlayer();
@@ -46,6 +50,7 @@ namespace System.Weapon {
             transform.SetParent(player.transform);
 
             attatcher = player;
+            player.heldWeapon = this;
 
             transform.localPosition = Vector2.zero;
         }

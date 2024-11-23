@@ -46,7 +46,7 @@ namespace Hunger_of_war.Util {
             da.rot = rot.transform;
 
             if (shape == DamageAreaShape.Square) {
-                render.sprite = Resources.Load<Sprite>("Texture2D/DamageArea");
+                render.sprite = Resources.Load<Sprite>("dummy/white_box");
 
                 var col = obj.AddComponent<BoxCollider2D>();
                 col.isTrigger = true;   
@@ -103,6 +103,21 @@ namespace Hunger_of_war.Util {
 
         public void Show() {
             isShowing = true;
+        }
+        public void BecomeRed(bool val) {
+            Color @color = render.color;
+
+            if (val) {
+                Color col = Color.red;
+                col.a = @color.a;
+
+                render.color = col;
+            } else {
+                Color col = Color.white;
+                col.a = @color.a;
+
+                render.color = col;
+            }
         }
 
         public void Hide() {
