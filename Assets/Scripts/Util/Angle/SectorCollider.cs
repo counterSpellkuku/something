@@ -1,10 +1,9 @@
-using System;
-using System.Collections.Generic;
 
+using System.Collections.Generic;
+using UnityEngine;
 namespace Entity.ViewAngle
 {
-    using UnityEngine;
-using System.Collections.Generic;
+
 
 public class SectorCollider : MonoBehaviour
 {
@@ -22,7 +21,9 @@ public class SectorCollider : MonoBehaviour
 
     [Header("Debug")] 
     public bool showDebug = true;
-
+    public bool show = false;
+    
+    
     private EdgeCollider2D edgeCollider;
     private List<Transform> detectedObjects = new List<Transform>();
     private MeshFilter meshFilter;
@@ -67,11 +68,12 @@ public class SectorCollider : MonoBehaviour
         UpdateColliderShape();
     }
 
-    void CreateSectorMesh()
-    {
+    void CreateSectorMesh() {
+        
+        
         if (mesh != null)
             DestroyImmediate(mesh);
-
+        if (!show) return;
         mesh = new Mesh();
         meshFilter.mesh = mesh;
 
@@ -110,8 +112,7 @@ public class SectorCollider : MonoBehaviour
         mesh.RecalculateNormals();
     }
 
-    void UpdateColliderShape()
-    {
+    void UpdateColliderShape() {
         List<Vector2> points = new List<Vector2>();
         points.Add(Vector2.zero);
 
@@ -133,11 +134,15 @@ public class SectorCollider : MonoBehaviour
     {
         if (Application.isPlaying && meshFilter != null)
         {
-            CreateSectorMesh();
-            UpdateColliderShape();
-            if (meshRenderer != null && meshRenderer.material != null)
-                meshRenderer.material.color = sectorColor;
+            SectorUpdate();
         }
+    }
+
+    public void SectorUpdate() {
+        CreateSectorMesh();
+        UpdateColliderShape();
+        if (meshRenderer != null && meshRenderer.material != null)
+            meshRenderer.material.color = sectorColor;
     }
 
     void OnDestroy()

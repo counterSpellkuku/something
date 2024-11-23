@@ -148,7 +148,7 @@ namespace Entity.Player {
 
         private new void FixedUpdate() {
             base.FixedUpdate();
-             if (stopMove <= 0) {
+            if (stopMove <= 0) {
                 Move(moveInput);
                 RecordSystem.Instance.Record(keys.ToArray());
                 keys.Clear();
