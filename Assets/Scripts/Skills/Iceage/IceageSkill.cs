@@ -16,16 +16,10 @@ public class IceageSkill : BaseSkill
         skillCool = new Cooldown(cooldown);
     }
         
-    public override void ActivateToVector3(GameObject user, Vector3 target)
+    public override bool ActivateToVector3(GameObject user, Vector3 target)
     {
-            
-        if (skillCool.IsIn())
-        {
-            Debug.Log("Skill is on cooldown!");
-            return;
-        }
         skillCool.Start();
-        base.ActivateToVector3(user, target);
+        return base.ActivateToVector3(user, target);
     }
         
 
@@ -46,7 +40,7 @@ public class IceageSkill : BaseSkill
         throw new System.NotImplementedException();
     }
     
-    public override void ActivateToObject(GameObject user, GameObject target)
+    public override bool ActivateToObject(GameObject user, GameObject target)
     {
         throw new System.NotImplementedException();
     }

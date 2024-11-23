@@ -465,11 +465,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2880761113001408112, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.17
+      value: -1.9
       objectReference: {fileID: 0}
     - target: {fileID: 2880761113001408112, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.48
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 2880761113001408112, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -574,6 +574,63 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2245849266010215877, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
   m_PrefabInstance: {fileID: 529303321}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1230946978
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2245849266010215877, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
+      propertyPath: m_Name
+      value: Slime (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880761113001408112, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880761113001408112, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880761113001408112, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880761113001408112, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880761113001408112, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880761113001408112, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880761113001408112, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880761113001408112, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880761113001408112, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880761113001408112, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
 --- !u!1 &1428896256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +1069,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 0.099999994}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1087,6 +1144,7 @@ MonoBehaviour:
   fireballSkill: {fileID: 2130533360}
   missileSkill: {fileID: 2130533364}
   earthquakeSkill: {fileID: 2130533365}
+  iceageSkill: {fileID: 2130533366}
   target: {fileID: 773711884}
 --- !u!114 &2130533364
 MonoBehaviour:
@@ -1132,72 +1190,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d13b384c5f604d278ac075324757354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: 
+  skillName: "\uC544\uC774\uC2A4\uC5D0\uC774\uC9C0"
   cooldown: 3
-  iceagePrefab: {fileID: 170349033734658305}
+  iceagePrefab: {fileID: 4251640627151549826, guid: 32af96e439ec747419f1a27eb7c894bd, type: 3}
   damage: 10
---- !u!1001 &170349033734658304
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2762402968292464334, guid: 32af96e439ec747419f1a27eb7c894bd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2762402968292464334, guid: 32af96e439ec747419f1a27eb7c894bd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 2762402968292464334, guid: 32af96e439ec747419f1a27eb7c894bd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2762402968292464334, guid: 32af96e439ec747419f1a27eb7c894bd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2762402968292464334, guid: 32af96e439ec747419f1a27eb7c894bd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2762402968292464334, guid: 32af96e439ec747419f1a27eb7c894bd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2762402968292464334, guid: 32af96e439ec747419f1a27eb7c894bd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2762402968292464334, guid: 32af96e439ec747419f1a27eb7c894bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2762402968292464334, guid: 32af96e439ec747419f1a27eb7c894bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2762402968292464334, guid: 32af96e439ec747419f1a27eb7c894bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4251640627151549826, guid: 32af96e439ec747419f1a27eb7c894bd, type: 3}
-      propertyPath: m_Name
-      value: Iceage
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 32af96e439ec747419f1a27eb7c894bd, type: 3}
---- !u!1 &170349033734658305 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4251640627151549826, guid: 32af96e439ec747419f1a27eb7c894bd, type: 3}
-  m_PrefabInstance: {fileID: 170349033734658304}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1208,8 +1204,8 @@ SceneRoots:
   - {fileID: 1428896259}
   - {fileID: 114023268}
   - {fileID: 529303321}
+  - {fileID: 1230946978}
   - {fileID: 1910969788}
   - {fileID: 1598510333}
   - {fileID: 741203747}
   - {fileID: 200969345}
-  - {fileID: 170349033734658304}
