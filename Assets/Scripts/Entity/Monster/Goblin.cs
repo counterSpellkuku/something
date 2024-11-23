@@ -1,7 +1,13 @@
+
+
+using UnityEngine;
+
 namespace Entity.Monster {
     public class Goblin : Monster {
         protected override void MobUpdate()
         {
+                                Debug.Log(currentVelocity);
+
             if (state == MonsterState.Idle) {
                 if (Dist(player.transform) <= 6) {
                     state = MonsterState.Chase;
@@ -12,6 +18,7 @@ namespace Entity.Monster {
                 if (Dist(player.transform) <= 2f) {
                     Attack();
                 } else {
+                    
                     Chase(player.transform);
                 }
             }
@@ -25,7 +32,13 @@ namespace Entity.Monster {
             player.GetDamage(baseDamage * 0.8f, this);
 
             atkCool = 0.3f;
-            stopMove = 0.1f;
+            
+
+            if (Random.Range(0, 100) < 50) {
+                stopMove = 0.1f;
+
+                Stop();
+            }
         }
     }
 }

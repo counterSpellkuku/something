@@ -18,6 +18,7 @@ namespace Entity.Monster {
         public int baseDamage;
 
         public MonsterState state;
+        protected Vector2 moveDelta;
 
         void Start()
         {
@@ -43,11 +44,10 @@ namespace Entity.Monster {
         protected virtual void MobUpdate() {}
 
         public void Chase(Transform target) {
+            moveDelta = Vector2.zero;
             if (stopMove > 0) {
                 return;
             }
-            
-            Vector2 moveDelta = Vector2.zero;
 
             if (target.position.x > transform.position.x) {
                 moveDelta.x = 1;
