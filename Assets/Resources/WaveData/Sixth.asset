@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Sixth
   m_EditorClassIdentifier: Assembly-CSharp:System.Wave:WaveData
-  Name: 
+  Name: Sixth
   monsters:
-    _keyValueList: []
+    _keyValueList:
+    - Key: {fileID: 724181041804239882, guid: e98d8d1a87c3c9443a439de43bc4e241, type: 3}
+      Value: 1
+    - Key: {fileID: 2245849266010215877, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
+      Value: 1
