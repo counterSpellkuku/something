@@ -106,6 +106,33 @@ namespace Entity.Player {
             } else if (facing == -1) {
                 render.flipX = true;
             }
+
+            if (heldWeapon != null) {
+                heldWeapon.animator.SetBool("isMoving", isMoving);
+                if (moveInput.y > 0) {
+                    heldWeapon.animator.SetInteger("faceY", 1);
+                } else if (moveInput.y < 0) {
+                    heldWeapon.animator.SetInteger("faceY", -1);
+                } else {
+                    heldWeapon.animator.SetInteger("faceY", 0);
+                }
+
+                if (moveInput.x > 0) {
+                    heldWeapon.animator.SetBool("toRight", true);
+                    facing = 1;
+                } else if (moveInput.x < 0) {
+                    heldWeapon.animator.SetBool("toRight", true);
+                    facing = -1;
+                } else {
+                    heldWeapon.animator.SetBool("toRight", false);
+                }
+
+                if (facing == 1) {
+                    heldWeapon.render.flipX = false;
+                } else if (facing == -1) {
+                    heldWeapon.render.flipX = true;
+                }
+            }
         }
 
         protected override void OnHurt(float damage, BaseEntity attacker, ref bool cancel)

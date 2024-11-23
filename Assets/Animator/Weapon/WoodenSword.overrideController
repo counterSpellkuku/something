@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WoodenSword
+  m_Controller: {fileID: 9100000, guid: e5cd8ddf9e4b01845bfe8cb59b5e3002, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: b7fdad2b61c7d6046a79f4492cad7b81, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 817b7e324846925438d9d0c412a9f560, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f165daa7cecf2d74abc592f2da56a1a8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 26d8a2fbdb0851f4da205588e04ec3a4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f2923f38bd2fd654e875c5d031f5c9df, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d33b23859e4957348a9a67706b8f7225, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 4e1cfca5cd5660e479c6b4473a99574e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9f32360e52000214f8e2a573e8e05305, type: 2}

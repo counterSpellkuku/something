@@ -5,13 +5,18 @@ public class DamageIndicator : MonoBehaviour
 {
     TMP_Text txt;
     float time;
-    public static void Show(Vector2 pos, float damage, Color col) {
+    public static void Show(Vector2 pos, float damage, Color col, bool crit = false) {
         DamageIndicator obj = Resources.Load<DamageIndicator>("Prefabs/UI/DamageInfo");
 
         DamageIndicator instantiated = Instantiate(obj, pos, Quaternion.identity);
 
         instantiated.txt.text = ((int)damage).ToString();
         instantiated.txt.color = col;
+        
+        if (crit) {
+            instantiated.txt.fontStyle = FontStyles.Italic;
+            instantiated.txt.text += "!!";
+        }
 
     }
     void Awake() {
