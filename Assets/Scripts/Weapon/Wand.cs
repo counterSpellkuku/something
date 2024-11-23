@@ -1,4 +1,5 @@
 using System.Manager;
+using System.PlayerSave;
 using Entity;
 using Entity.Monster;
 using Hunger_of_war.Util;
@@ -50,11 +51,13 @@ namespace System.Weapon {
             Projectile pj = Instantiate(wandBullet, transform.position, Quaternion.identity);
             pj.LifeTime = 10;
 
-            pj.transform.rotation = leftArea.rot.rotation;
-            Debug.Log(pj.transform.forward);
+            // pj.transform.rotation = leftArea.rot.rotation;
+            
+            Vector3 dir = ((Vector3) RecordSystem.Instance.GetMousePosition() - this.transform.position).normalized;
+            
 
             attatcher.DirectionToMouse();
-            pj.rb.linearVelocity = pj.transform.forward * 2;
+            pj.rb.AddForce(dir * 25, ForceMode2D.Impulse);
             pj.OnHit = OnHitDefBullet;
         }
 

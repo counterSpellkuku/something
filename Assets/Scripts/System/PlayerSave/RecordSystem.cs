@@ -190,14 +190,10 @@ namespace System.PlayerSave
             RecordSystem.Instance = null;
         }
 
-        public Vector2 GetMousePosition() {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Plane plane = new Plane(Vector3.up, 0);
-            float distance;
-            if (plane.Raycast(ray, out distance))
-                return ray.GetPoint(distance);
-
-            return Vector2.zero;
+        public Vector3 GetMousePosition() {
+            Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 
+                Input.mousePosition.y, -Camera.main.transform.position.z));
+            return point;
         }
     }
 }
