@@ -10,6 +10,7 @@ public class SkillTestPlayer : MonoBehaviour
     [SerializeField] private FireballSkill fireballSkill;
     [SerializeField] private MissileSkill missileSkill;
     [SerializeField] private EarthquakeSkill earthquakeSkill;
+    [SerializeField] private IceageSkill iceageSkill;
     
     [SerializeField] private GameObject target;
 
@@ -24,7 +25,7 @@ public class SkillTestPlayer : MonoBehaviour
                 return;
             }
             
-            missileSkill.Activate(gameObject, target);
+            missileSkill.ActivateToObject(gameObject, target);
         }
     }
 }

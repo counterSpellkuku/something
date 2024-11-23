@@ -1,6 +1,9 @@
 using Skills.Iceage;
 using UnityEngine;
 
+/// <summary>
+/// ToVetor3로 작동하며, target은 아무거나 넣어도 ㄱㅊ
+/// </summary>
 public class IceageSkill : BaseSkill
 {
     [SerializeField] private GameObject iceagePrefab;
@@ -13,7 +16,7 @@ public class IceageSkill : BaseSkill
         skillCool = new Cooldown(cooldown);
     }
         
-    public override void Activate(GameObject user, GameObject target)
+    public override void ActivateToVector3(GameObject user, Vector3 target)
     {
             
         if (skillCool.IsIn())
@@ -22,11 +25,11 @@ public class IceageSkill : BaseSkill
             return;
         }
         skillCool.Start();
-        base.Activate(user, target);
+        base.ActivateToVector3(user, target);
     }
         
 
-    protected override void Execute(GameObject user, GameObject target)
+    protected override void ExecuteToVector3(GameObject user, Vector3 target)
     {
         GameObject fireballInstance = Instantiate(iceagePrefab, user.transform.position, Quaternion.identity);
 
@@ -36,6 +39,16 @@ public class IceageSkill : BaseSkill
             iceageController.Init(target,damage);
         }
             
+    }
+    
+    protected override void ExecuteToObject(GameObject user, GameObject target)
+    {
+        throw new System.NotImplementedException();
+    }
+    
+    public override void ActivateToObject(GameObject user, GameObject target)
+    {
+        throw new System.NotImplementedException();
     }
 
 }
