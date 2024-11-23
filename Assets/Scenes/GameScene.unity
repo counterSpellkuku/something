@@ -112273,7 +112273,6 @@ GameObject:
   - component: {fileID: 1221780225350295338}
   - component: {fileID: 5278547048168098791}
   - component: {fileID: 7436544769263599245}
-  - component: {fileID: 7688713791835829544}
   - component: {fileID: 7688713791835829545}
   m_Layer: 8
   m_Name: bat
@@ -112471,32 +112470,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7688713791835829544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2020072878578381397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1166a8f12719c9e4197d58cee643f004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: "\uD761\uD608 \uBC15\uC950"
-  currentHp: 10
-  maxHp: 10
-  speed: 6
-  maxSpeed: 12
-  acceleration: 50
-  deceleration: 50
-  currentVelocity: {x: 0, y: 0}
-  player: {fileID: 0}
-  inSkill: 0
-  atkCool: 0
-  stopMove: 0
-  baseDamage: 8
-  state: 0
 --- !u!114 &7688713791835829545
 MonoBehaviour:
   m_ObjectHideFlags: 0
