@@ -1,0 +1,732 @@
+fileFormatVersion: 2
+guid: 0d5c8e4ccec79ba40935c7696a3a74f6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7025248979718923531
+    second: WoodSword-Sheet_0
+  - first:
+      213: 8149696794674179718
+    second: WoodSword-Sheet_1
+  - first:
+      213: -8737371207394011276
+    second: WoodSword-Sheet_2
+  - first:
+      213: 2047618522228649917
+    second: WoodSword-Sheet_3
+  - first:
+      213: 217468339760846407
+    second: WoodSword-Sheet_4
+  - first:
+      213: -2554191068208338185
+    second: WoodSword-Sheet_5
+  - first:
+      213: -4581014197978553617
+    second: WoodSword-Sheet_6
+  - first:
+      213: 202101205401690772
+    second: WoodSword-Sheet_7
+  - first:
+      213: 8374323636065187729
+    second: WoodSword-Sheet_8
+  - first:
+      213: 3451591270885566706
+    second: WoodSword-Sheet_9
+  - first:
+      213: 5830649719058635192
+    second: WoodSword-Sheet_10
+  - first:
+      213: 3603403581282238424
+    second: WoodSword-Sheet_11
+  - first:
+      213: 7486902402728220706
+    second: WoodSword-Sheet_12
+  - first:
+      213: -4303581384070950649
+    second: WoodSword-Sheet_13
+  - first:
+      213: 604029307382402964
+    second: WoodSword-Sheet_14
+  - first:
+      213: 5528633236981063672
+    second: WoodSword-Sheet_15
+  - first:
+      213: -2176146517975851528
+    second: WoodSword-Sheet_16
+  - first:
+      213: -1648542489885639304
+    second: WoodSword-Sheet_17
+  - first:
+      213: -5093117296897366239
+    second: WoodSword-Sheet_18
+  - first:
+      213: -7657161712919416011
+    second: WoodSword-Sheet_19
+  - first:
+      213: 1916529175836557381
+    second: WoodSword-Sheet_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WoodSword-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 123
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0562d6c9b2be7160800000000000000
+      internalID: 7025248979718923531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 123
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68ea1b94e0a891170800000000000000
+      internalID: 8149696794674179718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 123
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 477dd80fd2f9eb680800000000000000
+      internalID: -8737371207394011276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 123
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbfe2fc723a9a6c10800000000000000
+      internalID: 2047618522228649917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 123
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 746d6558d4a940300800000000000000
+      internalID: 217468339760846407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 123
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fa67f291c0bd8cd0800000000000000
+      internalID: -2554191068208338185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 82
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe2a772bbd7fc60c0800000000000000
+      internalID: -4581014197978553617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 82
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49265acb9f10ec200800000000000000
+      internalID: 202101205401690772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 82
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 197b2d95af2973470800000000000000
+      internalID: 8374323636065187729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 82
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f829fa39f386ef20800000000000000
+      internalID: 3451591270885566706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 82
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b998320701aae050800000000000000
+      internalID: 5830649719058635192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 82
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dfb2bc277cd10230800000000000000
+      internalID: 3603403581282238424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 41
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22852a66112d6e760800000000000000
+      internalID: 7486902402728220706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 41
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7019774588b9644c0800000000000000
+      internalID: -4303581384070950649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 41
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f047c6471f16800800000000000000
+      internalID: 604029307382402964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 41
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ff9ca713a6a9bc40800000000000000
+      internalID: 5528633236981063672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 41
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fd98d88546ccc1e0800000000000000
+      internalID: -2176146517975851528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 41
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87d7a3df6533f19e0800000000000000
+      internalID: -1648542489885639304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 127e80f8dcc9159b0800000000000000
+      internalID: -5093117296897366239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53377b1ddfb4cb590800000000000000
+      internalID: -7657161712919416011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54009679121e89a10800000000000000
+      internalID: 1916529175836557381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78db938042418a4199beeeab29e784b
+      internalID: 1361970178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54890407221efc543a350496dd368e17
+      internalID: -1364907191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodSword-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 348e1a38ef4dc71409e99941448a3edc
+      internalID: 789539477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bdbc3b9b220c87642b3a0eee92898070
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      WoodSword-Sheet_0: 7025248979718923531
+      WoodSword-Sheet_1: 8149696794674179718
+      WoodSword-Sheet_10: 5830649719058635192
+      WoodSword-Sheet_11: 3603403581282238424
+      WoodSword-Sheet_12: 7486902402728220706
+      WoodSword-Sheet_13: -4303581384070950649
+      WoodSword-Sheet_14: 604029307382402964
+      WoodSword-Sheet_15: 5528633236981063672
+      WoodSword-Sheet_16: -2176146517975851528
+      WoodSword-Sheet_17: -1648542489885639304
+      WoodSword-Sheet_18: -5093117296897366239
+      WoodSword-Sheet_19: -7657161712919416011
+      WoodSword-Sheet_2: -8737371207394011276
+      WoodSword-Sheet_20: 1916529175836557381
+      WoodSword-Sheet_21: 1361970178
+      WoodSword-Sheet_22: -1364907191
+      WoodSword-Sheet_23: 789539477
+      WoodSword-Sheet_3: 2047618522228649917
+      WoodSword-Sheet_4: 217468339760846407
+      WoodSword-Sheet_5: -2554191068208338185
+      WoodSword-Sheet_6: -4581014197978553617
+      WoodSword-Sheet_7: 202101205401690772
+      WoodSword-Sheet_8: 8374323636065187729
+      WoodSword-Sheet_9: 3451591270885566706
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
