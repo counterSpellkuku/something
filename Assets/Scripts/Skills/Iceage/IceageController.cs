@@ -18,7 +18,7 @@ namespace Skills.Iceage
         [SerializeField] private Animator animator;
         [SerializeField] private LayerMask damageableLayer;
         private float damage;
-        [SerializeField] private float freezeTime = 2f;
+        [SerializeField] private float freezeTime = 5f;
     
         private float fadeOutDuration = 1f; // 알파값을 줄이는 시간
         private SpriteRenderer spriteRenderer; // SpriteRenderer를 알파값 조정을 위해 추가
@@ -26,7 +26,7 @@ namespace Skills.Iceage
     
         private HashSet<GameObject> alreadyDamaged;
         
-        public void Init(GameObject target, float damage)
+        public void Init(Vector3 target, float damage)
         {
             this.damage = damage;
         }

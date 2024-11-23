@@ -30,10 +30,10 @@ public class FireballController : MonoBehaviour
     
     private HashSet<GameObject> alreadyDamaged;
 
-    public void Init(GameObject target, float damage)
+    public void Init(Vector3 target, float damage)
     {
         // 초기 방향 계산
-        Vector3 direction = (target.transform.position - transform.position).normalized;
+        Vector3 direction = (target - transform.position).normalized;
         initialDirection = direction;
         this.damage = damage;
 

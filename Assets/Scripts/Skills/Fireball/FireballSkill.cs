@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Skills.Fireball
 {
+    /// <summary>
+    /// ToVector3로 작동하며, 무조건 target을 향해 발사합니다. 
+    /// </summary>
     public class FireballSkill : BaseSkill
     {
         [SerializeField] private GameObject fireballPrefab;
@@ -16,7 +19,7 @@ namespace Skills.Fireball
             skillCool = new Cooldown(cooldown);
         }
         
-        public override void Activate(GameObject user, GameObject target)
+        public override void ActivateToVector3(GameObject user, Vector3 target)
         {
             
             if (skillCool.IsIn())
@@ -25,11 +28,11 @@ namespace Skills.Fireball
                 return;
             }
             skillCool.Start();
-            base.Activate(user, target);
+            base.ActivateToVector3(user, target);
         }
         
 
-        protected override void Execute(GameObject user, GameObject target)
+        protected override void ExecuteToVector3(GameObject user, Vector3 target)
         {
             GameObject fireballInstance = Instantiate(fireballPrefab, user.transform.position, Quaternion.identity);
 
@@ -40,7 +43,15 @@ namespace Skills.Fireball
             }
             
         }
-        
 
+        protected override void ExecuteToObject(GameObject user, GameObject target)
+        {
+            throw new NotImplementedException();
+        }
+        
+        public override void ActivateToObject(GameObject user, GameObject target)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
