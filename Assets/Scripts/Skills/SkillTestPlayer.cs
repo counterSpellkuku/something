@@ -18,13 +18,13 @@ public class SkillTestPlayer : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            if(earthquakeSkill == null)
+            if(missileSkill == null)
             {
                 Debug.LogError("skill is not set!");
                 return;
             }
             
-            earthquakeSkill.Activate(gameObject, gameObject);
+            missileSkill.Activate(gameObject, target);
         }
     }
 }

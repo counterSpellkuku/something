@@ -1,124 +1,119 @@
 using System.Collections;
+using System.Collections.Generic;
 using Entity;
 using UnityEngine;
 
 namespace Skills.Missile
 {
-    /// <summary>
-    /// 사용하기 위해서는 꼭! Projectile 컴포넌트를 추가해주세요!
-    /// 사용하기 위해서는 꼭! 폭발 애니메이션 끝에 DestroyThis()를 호출해주세요!
-    /// </summary>
     public class MissileController : MonoBehaviour
     {
+        [Header("Missile Settings")]
         [SerializeField] private Animator animator;
-        [SerializeField] private float speed = 10f;
-        [SerializeField] private float explosionRadius = 1f; // 광역 데미지 반경
+        [SerializeField] private float baseSpeed = 10f; // 초기 속도
+        [SerializeField] private float maxSpeedMultiplier = 3f; // 최대 속도 배율
+        [SerializeField] private float accelerationTime = 2f; // 속도 증가 시간
+        [SerializeField] private float explosionDistance = 1f;
+        [SerializeField] private float explosionRadius = 2f; // 광역 데미지 반경
         [SerializeField] private float rotationSpeed = 200f; // 회전 속도 (각도/초)
+        [SerializeField] private LayerMask damageableLayer; // 데미지를 받을 레이어
+        [SerializeField] private float explosionDelay = 0.5f; // 폭발 후 지속 시간
 
-        private float damage;
         private GameObject target;
-
-        private Projectile projectile;
-        [SerializeField] private bool canFly = true;
-        [SerializeField] private bool hasExploded = false; // 폭발 여부 체크
+        private float damage;
+        private HashSet<GameObject> alreadyDamaged = new HashSet<GameObject>();
+        private bool hasExploded = false;
+        private float currentSpeed; // 현재 속도
+        private float accelerationTimer = 0f; // 가속 시간 타이머
 
         public void Init(GameObject target, float damage)
         {
             this.target = target;
             this.damage = damage;
-            projectile = GetComponent<Projectile>();
+            currentSpeed = baseSpeed; // 초기 속도 설정
+
+            if (target != null)
+            {
+                Vector3 direction = (target.transform.position - transform.position).normalized;
+                float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(0, 0, targetAngle);
+            }
         }
 
         private void Update()
         {
-            // 폭발하거나 비행 중지 시 이동 로직 정지
-            if (hasExploded || !canFly) return;
+            if (hasExploded) return;
 
-            if (target == null)
+            Accelerate();
+            MoveTowardsTarget();
+        }
+
+        private void Accelerate()
+        {
+            // 가속 로직: accelerationTime 동안 속도를 선형적으로 증가
+            if (accelerationTimer < accelerationTime)
             {
-                Debug.LogError($"{name} has no target. Destroying missile.");
-                Destroy(gameObject);
-                return;
+                accelerationTimer += Time.deltaTime;
+                float t = Mathf.Clamp01(accelerationTimer / accelerationTime); // 0에서 1까지 선형 증가
+                currentSpeed = Mathf.Lerp(baseSpeed, baseSpeed * maxSpeedMultiplier, t);
             }
+        }
+
+        private void MoveTowardsTarget()
+        {
+            if (target == null) return;
 
             // 타겟 방향 계산
             Vector3 direction = (target.transform.position - transform.position).normalized;
 
-            // 미사일이 타겟 방향을 바라보도록 회전
+            // 미사일 회전
             float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            float currentAngle = Mathf.LerpAngle(transform.eulerAngles.z, targetAngle, rotationSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(0, 0, currentAngle);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, targetAngle), rotationSpeed * Time.deltaTime);
 
-            // 타겟 방향으로 이동
-            transform.position += direction * speed * Time.deltaTime;
+            // 이동
+            transform.position += direction * currentSpeed * Time.deltaTime;
 
-            // 타겟 리스트 순회
-            foreach (Transform target in projectile.targets)
+            // 타겟 근처에서 폭발
+            if (Vector3.Distance(transform.position, target.transform.position) <= explosionDistance)
             {
-                // 충돌 후 폭발
-                if (!hasExploded) // 추가 방어로직
-                {
-                    Explode(); // 폭발 처리
-                    break; // 첫 번째 충돌 시 루프 종료
-                }
+                Explode();
             }
         }
 
         private void Explode()
         {
-            if (hasExploded) return; // 이미 폭발한 경우 중단
-            hasExploded = true; // 폭발 처리 플래그 설정
-            canFly = false; // 비행 중지
+            if (hasExploded) return;
 
-            // 이동 중지 (현재 위치 유지)
-            speed = 0f;
-
-
-
-            // 광역 데미지 적용
-            ApplyAoEDamage();
+            hasExploded = true;
+            currentSpeed = 0f;
+            animator?.SetTrigger("Explode");
+            ApplyExplosionDamage();
         }
 
-        private void ApplyAoEDamage()
+        private void ApplyExplosionDamage()
         {
-            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
-            foreach (Collider2D hitCollider in hitColliders)
+            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius, damageableLayer);
+            foreach (Collider2D collider in hitColliders)
             {
-                var aoeEntity = hitCollider.GetComponent<BaseEntity>();
-                if (aoeEntity != null)
+                if (!alreadyDamaged.Add(collider.gameObject)) continue; // 중복 검사
+
+                var entity = collider.GetComponent<BaseEntity>();
+                if (entity != null)
                 {
-                    aoeEntity.GetDamage(damage);
+                    entity.GetDamage(damage);
                 }
             }
         }
 
-        /// <summary>
-        /// 폭발 반경 시각화를 위한 Gizmos
-        /// </summary>
-        private void OnDrawGizmosSelected()
-        {
-            // 폭발 반경을 시각화
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, explosionRadius);
-
-            // Collider2D로 탐지된 오브젝트들을 시각화
-            if (Application.isPlaying)
-            {
-                Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
-                foreach (Collider2D collider in hitColliders)
-                {
-                    Gizmos.color = Color.yellow;
-                    Gizmos.DrawSphere(collider.transform.position, 0.1f); // 탐지된 오브젝트의 위치 표시
-                }
-            }
-        }
-
-        /// <summary>
-        /// 애니메이션 이벤트에서 호출
-        /// </summary>
         public void DestroyThis()
         {
             Destroy(gameObject);
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            // 폭발 반경 시각화
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, explosionRadius);
         }
     }
 }
