@@ -1,0 +1,729 @@
+fileFormatVersion: 2
+guid: 0ce2a5d4f215e254eb8f73501f7109d9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6815469966146000369
+    second: Wand-Sheet_0
+  - first:
+      213: 6812761370667504152
+    second: Wand-Sheet_1
+  - first:
+      213: 4759177517099645339
+    second: Wand-Sheet_2
+  - first:
+      213: 3468332101067557794
+    second: Wand-Sheet_3
+  - first:
+      213: 1369262896755951547
+    second: Wand-Sheet_4
+  - first:
+      213: -8127894542078368307
+    second: Wand-Sheet_5
+  - first:
+      213: 6189114145233445004
+    second: Wand-Sheet_6
+  - first:
+      213: 670446413646137379
+    second: Wand-Sheet_7
+  - first:
+      213: 9184957790055407252
+    second: Wand-Sheet_8
+  - first:
+      213: 4146619153589583970
+    second: Wand-Sheet_9
+  - first:
+      213: 887799095434056419
+    second: Wand-Sheet_10
+  - first:
+      213: -1833587943433064462
+    second: Wand-Sheet_11
+  - first:
+      213: -2737118662619357183
+    second: Wand-Sheet_12
+  - first:
+      213: -5824823717514021793
+    second: Wand-Sheet_13
+  - first:
+      213: 7873933859765579271
+    second: Wand-Sheet_14
+  - first:
+      213: 508759179090420009
+    second: Wand-Sheet_15
+  - first:
+      213: -6213819804060496643
+    second: Wand-Sheet_16
+  - first:
+      213: 2243511854864501743
+    second: Wand-Sheet_17
+  - first:
+      213: -3430901825699772579
+    second: Wand-Sheet_18
+  - first:
+      213: 5520191181765304649
+    second: Wand-Sheet_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wand-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 369
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a268afc269a61a0800000000000000
+      internalID: -6815469966146000369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 369
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 812d32efe5acb8e50800000000000000
+      internalID: 6812761370667504152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 369
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b99ffb19cbefb0240800000000000000
+      internalID: 4759177517099645339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 369
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ab473f7badf12030800000000000000
+      internalID: 3468332101067557794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 369
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb7c2459959900310800000000000000
+      internalID: 1369262896755951547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 369
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc525973afae33f80800000000000000
+      internalID: -8127894542078368307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 246
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c802cf4168624e550800000000000000
+      internalID: 6189114145233445004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 246
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32800560677ed4900800000000000000
+      internalID: 670446413646137379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 246
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49e95313276877f70800000000000000
+      internalID: 9184957790055407252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 246
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 260c9848620cb8930800000000000000
+      internalID: 4146619153589583970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 246
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e29243d298125c00800000000000000
+      internalID: 887799095434056419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 246
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ffab3fea79cd86e0800000000000000
+      internalID: -1833587943433064462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 123
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1002b76041dc30ad0800000000000000
+      internalID: -2737118662619357183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 123
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f547e4ea0b11a2fa0800000000000000
+      internalID: -5824823717514021793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 123
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70e6f38a025d54d60800000000000000
+      internalID: 7873933859765579271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 123
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92167e127c97f0700800000000000000
+      internalID: 508759179090420009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 123
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfccfa87fc314c9a0800000000000000
+      internalID: -6213819804060496643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 123
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feb8396352e822f10800000000000000
+      internalID: 2243511854864501743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d570deb97fcf260d0800000000000000
+      internalID: -3430901825699772579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9416d51f1a8ab9c40800000000000000
+      internalID: 5520191181765304649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9882abdcd15c934593cbc57a48a3155
+      internalID: 761434944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 0
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f7543d1a87ed24c92b74c968c28284
+      internalID: -332691668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07db9a25e9199c74fbd9f4ac5d6b6d8a
+      internalID: -1665435008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wand-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 0
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f6c57c6c04be44ba8d6a7574823c47
+      internalID: 163986562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 939755d49a2a58741b6f8d9e644a837a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Wand-Sheet_0: -6815469966146000369
+      Wand-Sheet_1: 6812761370667504152
+      Wand-Sheet_10: 887799095434056419
+      Wand-Sheet_11: -1833587943433064462
+      Wand-Sheet_12: -2737118662619357183
+      Wand-Sheet_13: -5824823717514021793
+      Wand-Sheet_14: 7873933859765579271
+      Wand-Sheet_15: 508759179090420009
+      Wand-Sheet_16: -6213819804060496643
+      Wand-Sheet_17: 2243511854864501743
+      Wand-Sheet_18: -3430901825699772579
+      Wand-Sheet_19: 5520191181765304649
+      Wand-Sheet_2: 4759177517099645339
+      Wand-Sheet_20: 761434944
+      Wand-Sheet_21: -332691668
+      Wand-Sheet_22: -1665435008
+      Wand-Sheet_23: 163986562
+      Wand-Sheet_3: 3468332101067557794
+      Wand-Sheet_4: 1369262896755951547
+      Wand-Sheet_5: -8127894542078368307
+      Wand-Sheet_6: 6189114145233445004
+      Wand-Sheet_7: 670446413646137379
+      Wand-Sheet_8: 9184957790055407252
+      Wand-Sheet_9: 4146619153589583970
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
