@@ -105,5 +105,10 @@ public class Deque<T> {
         rear = 0;
         size = 0;
     }
+
+    public T[] ToArray()
+    {
+        return (T[])array.Clone();
+    }
 }
 }

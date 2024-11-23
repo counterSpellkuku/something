@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Manager;
 using Entity.Player;
+using UnityEditor.Overlays;
 using UnityEngine;
 
 namespace System.PlayerSave
@@ -98,6 +100,9 @@ namespace System.PlayerSave
         
         
         // other
+        private int maxChunk = 100;
+
+        private bool first;
         // 플레이어 직방 입력 시 넣으세용
         public PlayerController player { set; private get;  }
 
@@ -113,6 +118,7 @@ namespace System.PlayerSave
                 activeKeys = new HashSet<KeyCode>()
             };
             Instance = this;
+            first = true;
         }
 
         
@@ -138,17 +144,24 @@ namespace System.PlayerSave
         public void Record(PlayerState currentState) {
             playerStates.Add(currentState);
             AddBefore(currentState);
+            ChunkSave();
         }
-
-        
         
         private void AddBefore(PlayerState state) {
             if(before.Count >= countOfBefore) before.RemoveRear();
-            
             before.AddFront(state);
+
+           
         }
-        
-        
+
+        private void ChunkSave() {
+            if (playerStates.Count >= maxChunk) {
+                if(first) FileManager.SaveData("PlayerShadow", GetRecordedStates().ToArray());
+                else FileManager.SaveDataLinear("PlayerShadow", GetRecordedStates().ToArray());
+                first = false;
+                playerStates.Clear();
+            }
+        }
         
         // Util
         public List<PlayerState> GetRecordedStates() => new List<PlayerState>(playerStates);
@@ -163,8 +176,12 @@ namespace System.PlayerSave
         public List<PlayerState> GetStatesBetween(float startTime, float endTime) => playerStates.Where(s => s.timestamp >= startTime && s.timestamp <= endTime).ToList();
         
         
-        
         // Singleton 해제
-        public void OnDestroy() { RecordSystem.Instance = null; }
+        public void OnDestroy()
+        {
+            // FileManager.SaveData("PlayerShadow", GetRecordedStates().ToArray());
+            FileManager.SaveEnd();
+            RecordSystem.Instance = null;
+        }
     }
 }

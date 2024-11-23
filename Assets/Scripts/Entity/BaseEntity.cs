@@ -15,32 +15,24 @@ namespace Entity
         
         [Header("Component")]
         public Rigidbody2D rigid { get; protected set; }
-        public BoxCollider2D collider { get; protected set; }
+        public BoxCollider2D col { get; protected set; }
 
         [Header("RigidBody Settings")] 
         [SerializeField] public float acceleration = 50f;
         [SerializeField] public float deceleration = 50f;
         [SerializeField] protected Vector2 currentVelocity;
 
-<<<<<<< Updated upstream
 
-        public void Awake()
-        {
-            rigid = GetComponent<Rigidbody2D>();
-            collider = GetComponent<BoxCollider2D>();
-=======
         protected virtual Color damageColor => Color.white;
 
         private bool onknockBack;
         private float knockBackDuration;
         
-        public void Awake()
-        {
+        public void Awake() {
             rigid = GetComponent<Rigidbody2D>();
             col = GetComponent<BoxCollider2D>();
             onknockBack = false;
             knockBackDuration = 0;
->>>>>>> Stashed changes
         }
         
         protected virtual void FixedUpdate() {

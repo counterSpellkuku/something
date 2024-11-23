@@ -29,29 +29,75 @@ namespace System.Manager
         public static void SaveData(string fileName = "PlayerShadow", params PlayerState[] data) {
             string filePath = Path.Combine(savePath, $"{fileName}.json");
             StringBuilder builder = new StringBuilder();
-            bool error = false;
             builder.AppendLine("{");
             
             
-            foreach (PlayerState state in data)
-            {
+            foreach (PlayerState state in data) {
                 string jsonData = ToJson(state);
                 builder.Append(jsonData);
                 builder.Append(",\n");
             }
-            builder.AppendLine("}");
 
-            try {
-                File.WriteAllText(filePath, builder.ToString());
-                Debug.Log($"Data saved successfully to: {filePath}");
-            }
-            catch (Exception e)
+            using (StreamWriter writer = File.CreateText(filePath))
             {
-                error = true;
-                Debug.LogError($"Failed to save data: {e.Message}");
+                try {
+                    writer.WriteLine(builder.ToString());
+                    Debug.Log($"Data saved successfully to: {filePath}");
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"Failed to save data: {e.Message}");
+                }
+
             }
         }
 
+        public static void SaveDataLinear(string fileName = "PlayerShadow", params PlayerState[] data) {
+            string filePath = Path.Combine(savePath, $"{fileName}.json");
+            StringBuilder builder = new StringBuilder();
+
+            
+            foreach (PlayerState state in data) {
+                string jsonData = ToJson(state);
+                builder.Append(jsonData);
+                builder.Append(",\n");
+
+            }
+
+
+            using (StreamWriter writer = File.AppendText(filePath))
+            {
+                try
+                {
+                    writer.WriteLine(builder.ToString());
+                    Debug.Log($"Data saved successfully to: {filePath}");
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"Failed to save data: {e.Message}");
+                }
+            }
+
+        }
+
+        public static void SaveEnd(string fileName = "PlayerShadow")
+        {
+            string filePath = Path.Combine(savePath, $"{fileName}.json");
+
+            using (StreamWriter writer = File.AppendText(filePath)) {
+                try
+                {
+                    writer.WriteLine("}");
+                    Debug.Log($"Data 'All' saved successfully to: {filePath}");
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"Failed to save data: {e.Message}");
+                }            }
+
+        }
+        
+        
         public static List<PlayerState> GetShadow(string name = "/PlayerShadow.json")
         {
             string filePath = savePath + name;
@@ -95,7 +141,6 @@ namespace System.Manager
 
             return results;
         }
-
         private static PlayerState ParseSingleGameData(string jsonString) {
             try {
                 PlayerState data = new PlayerState();
@@ -164,6 +209,8 @@ namespace System.Manager
             }
         }
 
+        
+        
         private static string ToJson(PlayerState data) {
             if (data == null) return "";
 
@@ -189,7 +236,7 @@ namespace System.Manager
             
             jsonBuilder.AppendLine("  \"activeKeys\": [");
             string keysList = string.Join(",\n    ", 
-                data.activeKeys.Select(key => $"\"{((int)key).ToString()}\""));
+                data.activeKeys.Select(key => $"{((int)key).ToString()}"));
             jsonBuilder.AppendLine($"    {keysList}");
             jsonBuilder.AppendLine("  ]");
         

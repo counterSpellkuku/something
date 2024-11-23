@@ -47,11 +47,9 @@ namespace Entity.Player {
             }
         }
 
-        public void OnDestroy() {
-            // FileManager.SaveData("PlayerShadow", RecordSystem.Instance.GetRecordedStates().ToArray());
+        public void OnDestroy()
+        {
         }
-        
-        
-        
+
     }
 }
