@@ -28,7 +28,7 @@ namespace Hunger_of_war.Util {
         BoxCollider2D col;
         Vector2 mouse;
         float angle;
-        Transform rot;
+        public Transform rot;
         SectorCollider sector;
         #endregion
 
