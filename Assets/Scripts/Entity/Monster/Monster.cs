@@ -65,6 +65,7 @@ namespace Entity.Monster {
         public override void Dead()
         {
             isDeath = true;
+            Destroy(gameObject, 1);
         }
 
         protected virtual void MobStart() {}

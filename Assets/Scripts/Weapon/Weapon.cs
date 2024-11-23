@@ -11,6 +11,8 @@ namespace System.Weapon {
         public ContactFilter2D filter;
 
         Collider2D[] results;
+
+        public abstract string Id {get;}
         
         
         void Awake() {

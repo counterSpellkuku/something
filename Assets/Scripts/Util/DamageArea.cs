@@ -71,6 +71,8 @@ namespace Hunger_of_war.Util {
                 sector.obstacleLayer = LayerMask.NameToLayer("wall");
                 sector.radius = length;
                 sector.angle = width * 180f / (Mathf.PI * length);
+
+                sector.show = false;
             }
 
             return da;
@@ -102,18 +104,18 @@ namespace Hunger_of_war.Util {
             } else if (shape == DamageAreaShape.FanShaped) {
                 Color @color = sector.sectorColor;
                 if (isShowing) {
-                    sector.radius = length;
-                    sector.angle = width * 180f / (Mathf.PI * length);
+                    sector.show = true;
 
                     @color.a = 0.3f;
                 } else {
-                    sector.radius = 0;
-                    sector.angle = 0;
+                    sector.show = false;
 
                     @color.a = 0f;
                 }
 
                 sector.sectorColor = @color;
+
+                sector.SectorUpdate();
             }
 
             mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
