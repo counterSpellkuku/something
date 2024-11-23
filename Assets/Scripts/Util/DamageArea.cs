@@ -1,6 +1,8 @@
 
 using System.Collections.Generic;
 using Entity;
+using Entity.ViewAngle;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum DamageAreaShape {
@@ -24,6 +26,7 @@ namespace Hunger_of_war.Util {
         Vector2 mouse;
         float angle;
         Transform rot;
+        SectorCollider sector;
         #endregion
 
         #region Static Methods
@@ -64,7 +67,7 @@ namespace Hunger_of_war.Util {
         void Start() {
             render = GetComponent<SpriteRenderer>();
             col = GetComponent<BoxCollider2D>();
-
+            sector = this.transform.AddComponent<SectorCollider>();
             transform.localScale = new Vector3(width, length);
             transform.localPosition = new Vector3(0, length / 2) + offset;
         }
