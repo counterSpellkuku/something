@@ -1,10 +1,9 @@
-using System;
-using System.Collections.Generic;
 
+using System.Collections.Generic;
+using UnityEngine;
 namespace Entity.ViewAngle
 {
-    using UnityEngine;
-using System.Collections.Generic;
+
 
 public class SectorCollider : MonoBehaviour
 {
@@ -135,11 +134,15 @@ public class SectorCollider : MonoBehaviour
     {
         if (Application.isPlaying && meshFilter != null)
         {
-            CreateSectorMesh();
-            UpdateColliderShape();
-            if (meshRenderer != null && meshRenderer.material != null)
-                meshRenderer.material.color = sectorColor;
+            SectorUpdate();
         }
+    }
+
+    public void SectorUpdate() {
+        CreateSectorMesh();
+        UpdateColliderShape();
+        if (meshRenderer != null && meshRenderer.material != null)
+            meshRenderer.material.color = sectorColor;
     }
 
     void OnDestroy()
