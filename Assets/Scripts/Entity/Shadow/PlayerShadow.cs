@@ -49,7 +49,6 @@ namespace Entity.Shadow
                 case KeyCode.S:
                     return Vector2.down;
             }
-
             return Vector2.zero;
         }
         
