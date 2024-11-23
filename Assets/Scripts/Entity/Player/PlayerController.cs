@@ -7,6 +7,7 @@ namespace Entity.Player
         
         
         private Vector2 moveInput;
+        public float inSkill, atkCool, preventInput;
 
         private void Start() {
             rigid = GetComponent<Rigidbody2D>();
@@ -18,11 +19,19 @@ namespace Entity.Player
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
             moveInput = moveInput.normalized;
+
+            if (inSkill > 0)
+                inSkill -= Time.deltaTime;
+            if (atkCool > 0)
+                atkCool -= Time.deltaTime;
+            if (preventInput > 0)
+                preventInput -= Time.deltaTime;
             
         }
 
         private void FixedUpdate() {
-            Move(moveInput);
+            if (preventInput <= 0)
+                Move(moveInput);
         }
 
         
