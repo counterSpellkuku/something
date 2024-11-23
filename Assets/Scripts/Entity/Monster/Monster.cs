@@ -21,6 +21,7 @@ namespace Entity.Monster {
 
         public MonsterState state;
         protected Vector2 moveDelta;
+        public bool isDeath;
         [SerializeField]
         Vector3 shadowOffset;
 
@@ -59,6 +60,11 @@ namespace Entity.Monster {
             }
 
             MobUpdate();
+        }
+
+        public override void Dead()
+        {
+            isDeath = true;
         }
 
         protected virtual void MobStart() {}

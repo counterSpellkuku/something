@@ -18,6 +18,7 @@ namespace Hunger_of_war.Util {
         public bool isShowing;
         public List<BaseEntity> casted = new();
         public Vector3 offset;
+        public Transform parent;
         #endregion
 
         #region Private Variables
@@ -45,6 +46,8 @@ namespace Hunger_of_war.Util {
 
             da.width = width;
             da.length = length;
+
+            da.parent = parent;
 
             da.rot = rot.transform;
 
@@ -84,7 +87,7 @@ namespace Hunger_of_war.Util {
                 @color.a = 0.3f;
 
                 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                angle = Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg;
+                angle = Mathf.Atan2(mouse.y - parent.position.y, mouse.x - parent.position.x) * Mathf.Rad2Deg;
                 rot.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
             } else {
                 @color.a = 0f;
