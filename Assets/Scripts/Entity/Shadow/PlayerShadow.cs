@@ -3,16 +3,30 @@ using System.Collections.Generic;
 using System.Manager;
 using System.PlayerSave;
 using Mono.Cecil.Cil;
+using Skills.Earthquake;
+using Skills.Fireball;
+using Skills.Missile;
 using UnityEngine;
 
 namespace Entity.Shadow
 {
+    [RequireComponent(typeof(EarthquakeSkill))]
+    [RequireComponent(typeof(FireballSkill))]
+    [RequireComponent(typeof(IceageSkill))]
+    [RequireComponent(typeof(MissileSkill))]
     public class PlayerShadow : BaseEntity
     {
         
         private PlayerState currentState;
         private List<PlayerState> states;
         private int idx;
+
+
+        public EarthquakeSkill earth;
+        public FireballSkill fire;
+        public IceageSkill ice;
+        public MissileSkill missile;
+        
         public new void Awake() {
             base.Awake();
             states = FileManager.GetShadow();
@@ -22,6 +36,11 @@ namespace Entity.Shadow
         {
             currentState = states[0];
             idx = 0;
+
+            earth = GetComponent<EarthquakeSkill>();
+            fire = GetComponent<FireballSkill>();
+            ice = GetComponent<IceageSkill>();
+            missile = GetComponent<MissileSkill>();
         }
         
 
@@ -29,7 +48,13 @@ namespace Entity.Shadow
             base.FixedUpdate();
             
             Vector2 dir = Vector2.zero;
-            foreach (KeyCode code in currentState.activeKeys) { dir += GetDirection(code); }
+            foreach (KeyCode code in currentState.activeKeys)
+            {
+                dir += GetDirection(code);
+                CheckSkill(code);
+            }
+            
+            
             
             // 스킬 체크 로직 추가
             Move(dir.normalized);
@@ -50,6 +75,25 @@ namespace Entity.Shadow
                     return Vector2.down;
             }
             return Vector2.zero;
+        }
+
+        public void CheckSkill(KeyCode code) {
+            Debug.Log(code);
+            switch (code) {
+                case KeyCode.Alpha1:
+                    earth.Activate(this.gameObject, this.gameObject);
+                    break;
+                case KeyCode.Alpha2:
+                    // fire.Activate(this.gameObject, );
+                    break;
+                case KeyCode.Alpha3:
+                    ice.Activate(this.gameObject, this.gameObject);
+                    break;
+                case KeyCode.Alpha4:
+                    missile.Activate(this.gameObject, GameManager.Instance.player.gameObject);
+                    break;
+            }
+            
         }
         
         protected override void OnHurt(float damage, BaseEntity attacker, ref bool cancel) { cancel = true; }

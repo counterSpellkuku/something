@@ -93,7 +93,8 @@ namespace System.Manager
                 catch (Exception e)
                 {
                     Debug.LogError($"Failed to save data: {e.Message}");
-                }            }
+                }
+            }
 
         }
         
@@ -147,25 +148,31 @@ namespace System.Manager
                 data.activeKeys = new HashSet<KeyCode>();
 
                 // position
-                Match posMatch = Regex.Match(jsonString, @"""position"":\s*{\s*""x"":\s*\(([-\d.]+),\s*([-\d.]+)\),\s*""y"":\s*\(([-\d.]+),\s*([-\d.]+)\)}");
+                Match posMatch = Regex.Match(jsonString, @"""position"":\s*{\s*""x"":\s*{\s*""x"":\s*\(([-\d.]+),\s*([-\d.]+)\)\s*}");
                 if (posMatch.Success)
                 {
                     float x1 = float.Parse(posMatch.Groups[1].Value);
-                    float x2 = float.Parse(posMatch.Groups[2].Value);
-                    float y1 = float.Parse(posMatch.Groups[3].Value);
-                    float y2 = float.Parse(posMatch.Groups[4].Value);
-                    data.position = new Vector2(x1, y1); // 첫 번째 값만 사용하거나 필요에 따라 수정
+                    float y1 = float.Parse(posMatch.Groups[2].Value);
+                    data.position = new Vector2(x1, y1); 
                 }
 
                 // velocity
-                Match velMatch = Regex.Match(jsonString, @"""currentVelocity"":\s*{\s*""x"":\s*\(([-\d.]+),\s*([-\d.]+)\),\s*""y"":\s*\(([-\d.]+),\s*([-\d.]+)\)}");
+                Match velMatch = Regex.Match(jsonString, @"""currentVelocity"":\s*{\s*""x"":\s*\(([-\d.]+),\s*([-\d.]+)\)\s*}");
                 if (velMatch.Success)
                 {
                     float x1 = float.Parse(velMatch.Groups[1].Value);
-                    float x2 = float.Parse(velMatch.Groups[2].Value);
-                    float y1 = float.Parse(velMatch.Groups[3].Value);
-                    float y2 = float.Parse(velMatch.Groups[4].Value);
-                    data.currentVelocity = new Vector2(x1, y1); // 첫 번째 값만 사용하거나 필요에 따라 수정
+                    float y1 = float.Parse(velMatch.Groups[2].Value);
+                    data.currentVelocity = new Vector2(x1, y1); 
+                }
+                
+                // Mouse
+                Match mouseMatch = Regex.Match(jsonString, @"""mousePosition"":\s*{\s*""x"":\s*\(([-\d.]+),\s*([-\d.]+)\)\s*}");
+                if (mouseMatch.Success)
+                {
+                    float x1 = float.Parse(mouseMatch.Groups[1].Value);
+                    float y1 = float.Parse(mouseMatch.Groups[2].Value);
+                    
+                    data.mousePosition = new Vector2(x1, y1); 
                 }
 
                 // timestamp
@@ -180,6 +187,13 @@ namespace System.Manager
                 if (deltaMatch.Success)
                 {
                     data.deltaTime = float.Parse(deltaMatch.Groups[1].Value);
+                }
+                
+                // Weapon
+                Match weaponMatch = Regex.Match(jsonString, @"""weapon"":\s*([-\d.]+)");
+                if (weaponMatch.Success)
+                {
+                    data.weaponId = int.Parse(weaponMatch.Groups[1].Value);
                 }
 
                 // activeKeys
@@ -220,19 +234,25 @@ namespace System.Manager
             
             jsonBuilder.AppendLine($"  \"position\": {{");
             jsonBuilder.AppendLine($"    \"x\": {data.position.ToString()},");
-            jsonBuilder.AppendLine($"    \"y\": {data.position.ToString()}");
+            // jsonBuilder.AppendLine($"    \"y\": {data.position.ToString()}");
             jsonBuilder.AppendLine("  },");
         
             
             jsonBuilder.AppendLine($"  \"currentVelocity\": {{");
             jsonBuilder.AppendLine($"    \"x\": {data.currentVelocity.ToString()},");
-            jsonBuilder.AppendLine($"    \"y\": {data.currentVelocity.ToString()}");
+            // jsonBuilder.AppendLine($"    \"y\": {data.currentVelocity.ToString()}");
             jsonBuilder.AppendLine("  },");
         
+
+            jsonBuilder.AppendLine($"  \"mousePosition\": {{");
+            jsonBuilder.AppendLine($"    \"x\": {data.mousePosition.ToString()},");
+            // jsonBuilder.AppendLine($"    \"y\": {data.currentVelocity.ToString()}");
+            jsonBuilder.AppendLine("  },");
+
             
             jsonBuilder.AppendLine($"  \"timestamp\": {data.timestamp.ToString()},");
             jsonBuilder.AppendLine($"  \"deltaTime\": {data.deltaTime.ToString()},");
-        
+            jsonBuilder.AppendLine($"  \"weapon\": {data.weaponId.ToString()},");
             
             jsonBuilder.AppendLine("  \"activeKeys\": [");
             string keysList = string.Join(",\n    ", 

@@ -150,7 +150,7 @@ namespace Entity.Player {
             base.FixedUpdate();
             if (stopMove <= 0) {
                 Move(moveInput);
-                RecordSystem.Instance.Record(keys.ToArray());
+                RecordSystem.Instance.Record(0, keys.ToArray());
                 keys.Clear();
             }
         }
