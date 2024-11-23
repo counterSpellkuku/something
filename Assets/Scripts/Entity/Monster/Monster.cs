@@ -65,7 +65,10 @@ namespace Entity.Monster {
         {
             isDeath = true;
             animator.SetBool("isDeath", isDeath);
-
+            if (Random.Range(0, 11) == 10)
+            {
+                Instantiate(WeaponManager.Instance.weapons[Random.Range(0, WeaponManager.Instance.weapons.Count - 1)], this.transform.position, Quaternion.identity);
+            } 
             Stop();
             Destroy(gameObject, 1);
         }
