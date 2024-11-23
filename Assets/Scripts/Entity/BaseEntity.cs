@@ -77,9 +77,11 @@ namespace Entity
             }
 
             currentVelocity = Vector2.ClampMagnitude(currentVelocity, maxSpeed);
-
+            
             rigid.linearVelocity = currentVelocity;
         }
+
+        protected void Stop() { currentVelocity = Vector2.zero; }
 
 
     }

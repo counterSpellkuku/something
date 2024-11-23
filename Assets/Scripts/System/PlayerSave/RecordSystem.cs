@@ -101,6 +101,7 @@ namespace System.PlayerSave
         // 플레이어 직방 입력 시 넣으세용
         public PlayerController player { set; private get;  }
 
+        // 초기화
         public void Awake() {
             playerStates = new List<PlayerState>();
             before = new Deque<PlayerState>();
@@ -114,6 +115,8 @@ namespace System.PlayerSave
             Instance = this;
         }
 
+        
+        // 레코드 Add 값
         public void Record(params KeyCode[] keyCodes) {
             if (player == null) return;
             
@@ -138,6 +141,7 @@ namespace System.PlayerSave
         }
 
         
+        
         private void AddBefore(PlayerState state) {
             if(before.Count >= countOfBefore) before.RemoveRear();
             
@@ -145,6 +149,8 @@ namespace System.PlayerSave
         }
         
         
+        
+        // Util
         public List<PlayerState> GetRecordedStates() => new List<PlayerState>(playerStates);
         
         public void ClearRecords() {
@@ -155,8 +161,10 @@ namespace System.PlayerSave
         
         public PlayerState FindStateAtTime(float timestamp) => playerStates.FirstOrDefault(s => Mathf.Approximately(s.timestamp, timestamp)) ?? dummyState;
         public List<PlayerState> GetStatesBetween(float startTime, float endTime) => playerStates.Where(s => s.timestamp >= startTime && s.timestamp <= endTime).ToList();
-
-
+        
+        
+        
+        // Singleton 해제
         public void OnDestroy() { RecordSystem.Instance = null; }
     }
 }

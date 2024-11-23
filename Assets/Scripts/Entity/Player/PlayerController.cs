@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Manager;
 using System.PlayerSave;
-using NUnit.Framework;
 using UnityEngine;
 
 namespace Entity.Player {
@@ -18,11 +17,8 @@ namespace Entity.Player {
             rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
             RecordSystem.Instance.player = this;
             keys = new HashSet<KeyCode>();
-            List<PlayerState> list = FileManager.GetShadow();
-            foreach (PlayerState state in list)
-            {
-                Debug.Log(state);
-            }
+            
+
         }
 
         private void Update() {
@@ -31,6 +27,8 @@ namespace Entity.Player {
             moveInput.y = Input.GetAxisRaw("Vertical");
             if(moveInput.y != 0) keys.Add(moveInput.y > 0 ? KeyCode.W : KeyCode.S);
             // 플레이어 스킬마다 추가해야됨.
+            
+            
             moveInput = moveInput.normalized;
             
             if (inSkill > 0)
@@ -39,8 +37,6 @@ namespace Entity.Player {
                 atkCool -= Time.deltaTime;
             if (preventInput > 0)
                 preventInput -= Time.deltaTime;
-            
-            if(Input.GetKeyDown(KeyCode.Space)) FileManager.SaveData("PlayerShadow", RecordSystem.dummyState, RecordSystem.dummyState);
         }
 
         private void FixedUpdate() {
@@ -49,6 +45,10 @@ namespace Entity.Player {
                 RecordSystem.Instance.Record(keys.ToArray());
                 keys.Clear();
             }
+        }
+
+        public void OnDestroy() {
+            // FileManager.SaveData("PlayerShadow", RecordSystem.Instance.GetRecordedStates().ToArray());
         }
         
         
