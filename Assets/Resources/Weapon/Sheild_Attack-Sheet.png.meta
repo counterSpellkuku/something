@@ -1,0 +1,510 @@
+fileFormatVersion: 2
+guid: ace89ca9cf65d2c4f8b5565143fab5b5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6297790621769027007
+    second: Sheild_Attack-Sheet_0
+  - first:
+      213: 5498248167047900978
+    second: Sheild_Attack-Sheet_1
+  - first:
+      213: 4858855421004309677
+    second: Sheild_Attack-Sheet_2
+  - first:
+      213: -5342775633332863834
+    second: Sheild_Attack-Sheet_3
+  - first:
+      213: 8097857250751586077
+    second: Sheild_Attack-Sheet_4
+  - first:
+      213: 7224247798073377495
+    second: Sheild_Attack-Sheet_5
+  - first:
+      213: -6932881622083225091
+    second: Sheild_Attack-Sheet_6
+  - first:
+      213: 6574462629810160822
+    second: Sheild_Attack-Sheet_7
+  - first:
+      213: 8276140322032333995
+    second: Sheild_Attack-Sheet_8
+  - first:
+      213: 366548208598884009
+    second: Sheild_Attack-Sheet_9
+  - first:
+      213: 8401607701812642932
+    second: Sheild_Attack-Sheet_10
+  - first:
+      213: 1475930677041452915
+    second: Sheild_Attack-Sheet_11
+  - first:
+      213: -503232205882702659
+    second: Sheild_Attack-Sheet_12
+  - first:
+      213: 5268649784750599618
+    second: Sheild_Attack-Sheet_13
+  - first:
+      213: 6809953871439660619
+    second: Sheild_Attack-Sheet_14
+  - first:
+      213: 5023697886572834446
+    second: Sheild_Attack-Sheet_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sheild_Attack-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 246
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd4450143f366750800000000000000
+      internalID: 6297790621769027007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheild_Attack-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 246
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23f25d3b393bd4c40800000000000000
+      internalID: 5498248167047900978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheild_Attack-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 246
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da461f7134f1e6340800000000000000
+      internalID: 4858855421004309677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheild_Attack-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 246
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6acf4946ed5aad5b0800000000000000
+      internalID: -5342775633332863834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheild_Attack-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 246
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1f9ed8e34e516070800000000000000
+      internalID: 8097857250751586077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheild_Attack-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 123
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d2cf8db81fa14460800000000000000
+      internalID: 7224247798073377495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheild_Attack-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 123
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df935ed85e479cf90800000000000000
+      internalID: -6932881622083225091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheild_Attack-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 123
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b44ae6cdee2d3b50800000000000000
+      internalID: 6574462629810160822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheild_Attack-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 123
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba4360626c1cad270800000000000000
+      internalID: 8276140322032333995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheild_Attack-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 123
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae979657ad361500800000000000000
+      internalID: 366548208598884009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheild_Attack-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4748ab0f0b1889470800000000000000
+      internalID: 8401607701812642932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheild_Attack-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3775826812f8b7410800000000000000
+      internalID: 1475930677041452915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheild_Attack-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db443d899f82409f0800000000000000
+      internalID: -503232205882702659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheild_Attack-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 0
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cd6ff190110e1940800000000000000
+      internalID: 5268649784750599618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheild_Attack-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 78
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4605f327f0d18e50800000000000000
+      internalID: 6809953871439660619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 240d27e2cb5d7fd4cbeda60c03943bff
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Sheild_Attack-Sheet_0: 6297790621769027007
+      Sheild_Attack-Sheet_1: 5498248167047900978
+      Sheild_Attack-Sheet_10: 8401607701812642932
+      Sheild_Attack-Sheet_11: 1475930677041452915
+      Sheild_Attack-Sheet_12: -503232205882702659
+      Sheild_Attack-Sheet_13: 5268649784750599618
+      Sheild_Attack-Sheet_14: 6809953871439660619
+      Sheild_Attack-Sheet_2: 4858855421004309677
+      Sheild_Attack-Sheet_3: -5342775633332863834
+      Sheild_Attack-Sheet_4: 8097857250751586077
+      Sheild_Attack-Sheet_5: 7224247798073377495
+      Sheild_Attack-Sheet_6: -6932881622083225091
+      Sheild_Attack-Sheet_7: 6574462629810160822
+      Sheild_Attack-Sheet_8: 8276140322032333995
+      Sheild_Attack-Sheet_9: 366548208598884009
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
