@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Entity.Player;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace Entity.Monster {
     }
     public class Monster : BaseEntity
     {
+        public static List<Monster> monsters = new();
         [SerializeField]
         protected PlayerController player;
         public bool playerFound => player != null;
@@ -30,6 +32,8 @@ namespace Entity.Monster {
             faceDef = facing;
 
             facing = 1 * faceDef;
+
+            monsters.Add(this);
 
             MobStart();
         }
@@ -82,6 +86,10 @@ namespace Entity.Monster {
 
         protected float Dist(Transform target) {
             return Vector2.Distance(transform.position, target.position);
+        }
+
+        private void OnDestroy() {
+            monsters.Remove(this);
         }
     }
 
