@@ -22,7 +22,7 @@ namespace Entity.Monster {
         public MonsterState state;
         protected Vector2 moveDelta;
         [SerializeField]
-        Vector2 shadowOffset;
+        Vector3 shadowOffset;
 
         public int facing = 1;
         int faceDef;
@@ -35,7 +35,7 @@ namespace Entity.Monster {
 
             facing = 1 * faceDef;
 
-            ShadowCreator.Generate(this, shadowOffset);
+            shadowAnim = ShadowCreator.Generate(this, shadowOffset);
 
             monsters.Add(this);
 

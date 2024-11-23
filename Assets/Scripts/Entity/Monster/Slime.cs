@@ -31,6 +31,7 @@ namespace Entity.Monster {
             stopMove = 1f;
 
             animator.SetTrigger("attack");
+            shadowAnim.SetTrigger("attack");
 
             float distance = Dist(player.transform);
             
