@@ -9,6 +9,9 @@ namespace Entity.Player {
         private Vector2 moveInput;
         public float inSkill, atkCool, preventInput, stopMove;
         protected override Color damageColor => Color.red;
+        public bool isMoving;
+        [SerializeField]
+        Animator shadowAnim;
 
         private HashSet<KeyCode> keys;
         
@@ -19,7 +22,6 @@ namespace Entity.Player {
             RecordSystem.Instance.player = this;
             keys = new HashSet<KeyCode>();
             
-
         }
 
         private void Update() {
@@ -29,7 +31,12 @@ namespace Entity.Player {
                 if(moveInput.x != 0) keys.Add(moveInput.x > 0 ? KeyCode.D : KeyCode.A);
                 moveInput.y = Input.GetAxisRaw("Vertical");
                 if(moveInput.y != 0) keys.Add(moveInput.y > 0 ? KeyCode.W : KeyCode.S);
+
+                isMoving = Mathf.Abs(moveInput.x) + Mathf.Abs(moveInput.y) != 0;
+
                 moveInput = moveInput.normalized;
+            } else {
+                isMoving = false;
             }
 
             // 플레이어 스킬마다 추가해야됨.
@@ -46,6 +53,35 @@ namespace Entity.Player {
             if (stopMove > 0)
                 stopMove -= Time.deltaTime;
             
+            Animate();
+        }
+
+        private void Animate() {
+            animator.SetBool("isMoving", isMoving);
+            shadowAnim.SetBool("isMoving", isMoving);
+            if (moveInput.y > 0) {
+                animator.SetInteger("faceY", 1);
+                shadowAnim.SetInteger("faceY", 1);
+            } else if (moveInput.y < 0) {
+                animator.SetInteger("faceY", -1);
+                shadowAnim.SetInteger("faceY", -1);
+            } else {
+                animator.SetInteger("faceY", 0);
+                shadowAnim.SetInteger("faceY", 0);
+            }
+
+            if (moveInput.x > 0) {
+                animator.SetBool("toRight", true);
+                shadowAnim.SetBool("toRight", true);
+                render.flipX = false;
+            } else if (moveInput.x < 0) {
+                animator.SetBool("toRight", true);
+                shadowAnim.SetBool("toRight", true);
+                render.flipX = true;
+            } else {
+                animator.SetBool("toRight", false);
+                shadowAnim.SetBool("toRight", false);
+            }
         }
 
         protected override void OnHurt(float damage, BaseEntity attacker, ref bool cancel)

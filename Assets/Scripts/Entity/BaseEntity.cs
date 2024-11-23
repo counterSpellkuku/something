@@ -16,6 +16,8 @@ namespace Entity
         [Header("Component")]
         public Rigidbody2D rigid { get; protected set; }
         public BoxCollider2D col { get; protected set; }
+        public Animator animator { get; protected set; }
+        public SpriteRenderer render { get; protected set; }
 
         [Header("RigidBody Settings")] 
         [SerializeField] public float acceleration = 50f;
@@ -30,6 +32,8 @@ namespace Entity
         {
             rigid = GetComponent<Rigidbody2D>();
             col = GetComponent<BoxCollider2D>();
+            animator = GetComponent<Animator>();
+            render = GetComponent<SpriteRenderer>();
             onknockBack = false;
             knockBackDuration = 0;
         }
