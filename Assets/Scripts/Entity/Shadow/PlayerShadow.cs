@@ -137,6 +137,8 @@ namespace Entity.Shadow
             }
             return Vector2.zero;
         }
+        
+        
 
         public void CheckSkill(KeyCode code) {
             Debug.Log(code);
