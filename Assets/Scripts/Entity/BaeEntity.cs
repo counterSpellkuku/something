@@ -14,12 +14,12 @@ namespace Entity
         [SerializeField] protected float speed, maxSpeed;
         
         [Header("Component")]
-        [SerializeField] protected Rigidbody2D rigid;
-        [SerializeField] protected BoxCollider2D collider;
-        
-        [Header("RigidBody Settings")]
-        [SerializeField] private float acceleration = 50f;
-        [SerializeField] private float deceleration = 50f;
+        public Rigidbody2D rigid { get; protected set; }
+        public BoxCollider2D collider { get; protected set; }
+
+        [Header("RigidBody Settings")] 
+        [SerializeField] public float acceleration = 50f;
+        [SerializeField] public float deceleration = 50f;
         [SerializeField] protected Vector2 currentVelocity;
 
 
