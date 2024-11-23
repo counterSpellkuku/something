@@ -13,6 +13,7 @@ namespace System.PlayerSave
         // 기본 위치 정보
         public Vector2 position;
         public Vector2 currentVelocity;
+        public Vector2 mousePosition;
         
         // 시간 정보
         public float timestamp;
@@ -22,11 +23,12 @@ namespace System.PlayerSave
         // 입력 정보
         public HashSet<KeyCode> activeKeys;
         
-        public PlayerState(Vector2 position, Vector2 velocity,
+        public PlayerState(Vector2 position, Vector2 velocity, Vector2 mousePosition,
             float timestamp, float deltaTime, params KeyCode[] keys) {
             
             this.position = position;
             this.currentVelocity = velocity;
+            this.mousePosition = mousePosition;
             this.timestamp = timestamp;
             this.deltaTime = deltaTime;
             this.activeKeys = new HashSet<KeyCode>(keys);
@@ -73,7 +75,6 @@ namespace System.PlayerSave
             return result;
         }
         
-        // 실제 이동 적용
         public void ApplyMovement(float playbackDeltaTime) {
             if (playbackDeltaTime <= 0) return;
             
@@ -113,12 +114,14 @@ namespace System.PlayerSave
             dummyState = new PlayerState {
                 position = Vector2.zero,
                 currentVelocity = Vector2.zero,
+                mousePosition = Vector2.zero,
                 timestamp = -1f,    // timestamp가 무조건 양수이므로 -1로 더미 표시
                 deltaTime = 0f,
                 activeKeys = new HashSet<KeyCode>()
             };
             Instance = this;
             first = true;
+            
         }
 
         
@@ -130,6 +133,7 @@ namespace System.PlayerSave
             PlayerState currentState = new PlayerState(
                 player.transform.position,
                 player.rigid.linearVelocity,
+                Input.mousePosition,
                 Time.time,
                 Time.deltaTime,
                 keyCodes.ToArray()
@@ -138,7 +142,7 @@ namespace System.PlayerSave
             Record(currentState);
         }
         public void Record(Vector2 position, Vector2 velocity, float time, float deltaTime, params KeyCode[] keys){
-            Record(new PlayerState(position, velocity, time, deltaTime, keys));
+            Record(new PlayerState(position, velocity, Input.mousePosition, time, deltaTime, keys));
         }
 
         public void Record(PlayerState currentState) {

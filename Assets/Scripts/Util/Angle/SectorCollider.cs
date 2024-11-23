@@ -22,7 +22,9 @@ public class SectorCollider : MonoBehaviour
 
     [Header("Debug")] 
     public bool showDebug = true;
-
+    public bool show = false;
+    
+    
     private EdgeCollider2D edgeCollider;
     private List<Transform> detectedObjects = new List<Transform>();
     private MeshFilter meshFilter;
@@ -67,11 +69,12 @@ public class SectorCollider : MonoBehaviour
         UpdateColliderShape();
     }
 
-    void CreateSectorMesh()
-    {
+    void CreateSectorMesh() {
+        
+        
         if (mesh != null)
             DestroyImmediate(mesh);
-
+        if (!show) return;
         mesh = new Mesh();
         meshFilter.mesh = mesh;
 
@@ -110,8 +113,7 @@ public class SectorCollider : MonoBehaviour
         mesh.RecalculateNormals();
     }
 
-    void UpdateColliderShape()
-    {
+    void UpdateColliderShape() {
         List<Vector2> points = new List<Vector2>();
         points.Add(Vector2.zero);
 

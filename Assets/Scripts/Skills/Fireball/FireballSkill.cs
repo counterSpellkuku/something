@@ -36,7 +36,7 @@ namespace Skills.Fireball
             FireballController fireballController = fireballInstance.GetComponent<FireballController>();
             if (fireballController != null)
             {
-                fireballController.Init(target,damage);
+                fireballController.Init(target, damage);
             }
             
         }
