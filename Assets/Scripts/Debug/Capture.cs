@@ -12,6 +12,8 @@ public class Capture : MonoBehaviour
 
     [SerializeField]
     private ScreenShotData[] screenShotDatas;
+    [SerializeField]
+    private KeyCode triggerKey;
 
     private void Setting(string name, int width, int height)
     {
@@ -48,7 +50,7 @@ public class Capture : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(triggerKey))
         {
             StartCoroutine(capture());
         }
