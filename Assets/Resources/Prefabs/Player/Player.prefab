@@ -124,6 +124,10 @@ GameObject:
   - component: {fileID: 603408209678808079}
   - component: {fileID: 757034266667823453}
   - component: {fileID: 7433149597165720311}
+  - component: {fileID: 1704709194990600279}
+  - component: {fileID: 5338449079415852847}
+  - component: {fileID: 2999458249929613193}
+  - component: {fileID: 3590618155054952745}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -290,20 +294,29 @@ MonoBehaviour:
   Name: 
   currentHp: 100
   maxHp: 100
-  speed: 5
+  speed: 8
   maxSpeed: 10
   acceleration: 50
   deceleration: 50
   currentVelocity: {x: 0, y: 0}
+  shadowAnim: {fileID: 2355324192307360719}
+  critPer: 0
+  critPower: 0
+  critPerDef: 3
+  critPowerDef: 2
+  isDeath: 0
   inSkill: 0
   atkCool: 0
   preventInput: 0
   stopMove: 0
   facing: 0
-  baseDamage: 0
+  baseDamage: 10
   isMoving: 0
   heldWeapon: {fileID: 0}
-  shadowAnim: {fileID: 2355324192307360719}
+  earth: {fileID: 0}
+  fire: {fileID: 0}
+  ice: {fileID: 0}
+  missile: {fileID: 0}
 --- !u!95 &7433149597165720311
 Animator:
   serializedVersion: 7
@@ -326,3 +339,67 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1704709194990600279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7356147867452610425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc94c742587d4c1a82ce3f1f7c93a150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: 
+  cooldown: 12
+  earthquakePrefab: {fileID: 8243630855626211722, guid: e91c57d631845402ca792e7ddff291c6, type: 3}
+  damage: 15
+--- !u!114 &5338449079415852847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7356147867452610425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc51ef67af440ae9066eb6b5dd71258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: 
+  cooldown: 8
+  fireballPrefab: {fileID: 6020485474125715339, guid: 9ed5f9647eba74b7fa1cfb195fafaee3, type: 3}
+  damage: 8
+--- !u!114 &2999458249929613193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7356147867452610425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d13b384c5f604d278ac075324757354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: 
+  cooldown: 10
+  iceagePrefab: {fileID: 4251640627151549826, guid: 32af96e439ec747419f1a27eb7c894bd, type: 3}
+  damage: 2
+--- !u!114 &3590618155054952745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7356147867452610425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03696725b4f74e4ca54e40882bdf1f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: 
+  cooldown: 25
+  missilePrefab: {fileID: 3960617039575388042, guid: 4940b304440e04a258758d45e9020435, type: 3}
+  damage: 25

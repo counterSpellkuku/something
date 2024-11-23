@@ -57,6 +57,7 @@ namespace System.Weapon {
 
             if (UIManager.Instance != null) {
                 UIManager.Instance.weaponBack.sprite = UIManager.Instance.weaponImg.sprite = render.sprite;
+                UIManager.Instance.weaponBack.gameObject.SetActive(true);
             }
 
             transform.localPosition = Vector2.zero;

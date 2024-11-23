@@ -1,4 +1,5 @@
 using System;
+using System.Manager;
 using Entity;
 using UnityEngine;
 
@@ -12,11 +13,17 @@ namespace Skills.Fireball
         [SerializeField] private GameObject fireballPrefab;
         [SerializeField] private int damage;
 
-        private Cooldown skillCool;
-
         private void Awake()
         {
             skillCool = new Cooldown(cooldown);
+        }
+
+        void Update() {
+            if (skillCool.IsIn()) {
+                UIManager.Instance.skill2Col.fillAmount = skillCool.timeLeft() / skillCool.time;
+            } else {
+                UIManager.Instance.skill2Col.fillAmount = 0;
+            }
         }
         
         public override bool ActivateToVector3(GameObject user, Vector3 target)

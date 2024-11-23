@@ -6,7 +6,7 @@ public abstract class BaseSkill : MonoBehaviour
     [SerializeField] protected string skillName;
     [SerializeField] protected float cooldown;
     
-    private Cooldown skillCool;
+    protected Cooldown skillCool;
 
     private void Awake()
     {

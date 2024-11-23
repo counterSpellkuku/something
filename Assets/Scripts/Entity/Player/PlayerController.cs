@@ -85,6 +85,7 @@ namespace Entity.Player {
             if (UIManager.Instance != null) {
                 if (heldWeapon == null) {
                     UIManager.Instance.weaponBack.sprite = UIManager.Instance.weaponImg.sprite = null;
+                    UIManager.Instance.weaponBack.gameObject.SetActive(false);
                 }
 
                 UIManager.Instance.hpRate.value = currentHp / maxHp;
@@ -125,7 +126,7 @@ namespace Entity.Player {
 
         public Transform GetNearTarget() {
             Vector3 pos = RecordSystem.Instance.GetMousePosition();
-            return Physics2D.OverlapCircle(pos, 5f, 1 << LayerMask.NameToLayer("monster")).transform;
+            return Physics2D.OverlapCircle(pos, 5f, 1 << LayerMask.NameToLayer("monster"))?.transform;
         }
 
         private void Animate() {

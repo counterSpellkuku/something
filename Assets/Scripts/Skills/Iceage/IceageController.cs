@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Manager;
 using Entity;
 using Entity.Monster;
 using UnityEngine;
@@ -39,6 +40,8 @@ namespace Skills.Iceage
                 Debug.LogError("SpriteRenderer not found! Please attach a SpriteRenderer to this GameObject.");
             }
             alreadyDamaged = new HashSet<GameObject>();
+
+            CamManager.main.Shake(1f, 0.3f);
         }
         
         

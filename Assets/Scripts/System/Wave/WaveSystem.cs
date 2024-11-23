@@ -84,7 +84,7 @@ namespace System.Wave
                         
             trigger.DelaySetup();
             List<Vector2> list = validPosition[trigger.name];
-            Vector2 position = list[Mathf.RoundToInt(UnityEngine.Random.Range(0f, list.Count - 1))];
+            Vector2 position = list[Mathf.FloorToInt(UnityEngine.Random.Range(0f, list.Count - 1))];
 
             if (trigger.data.monsters.Count <= 0) return;
             KeyValuePair<GameObject, int> kv = new KeyValuePair<GameObject, int>();

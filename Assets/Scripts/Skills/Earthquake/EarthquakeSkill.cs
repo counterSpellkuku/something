@@ -1,3 +1,4 @@
+using System.Manager;
 using UnityEngine;
 
 namespace Skills.Earthquake
@@ -9,6 +10,14 @@ namespace Skills.Earthquake
     {
         [SerializeField] private GameObject earthquakePrefab; // 지진 프리팹
         [SerializeField] private float damage = 10f; // 스킬 데미지
+
+        void Update() {
+            if (skillCool.IsIn()) {
+                UIManager.Instance.skill1Col.fillAmount = skillCool.timeLeft() / skillCool.time;
+            } else {
+                UIManager.Instance.skill1Col.fillAmount = 0;
+            }
+        }
         
         
         public override bool ActivateToVector3(GameObject user, Vector3 target)

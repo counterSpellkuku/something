@@ -1,6 +1,6 @@
 using System;
 
-class Cooldown {
+public class Cooldown {
     bool isIn;
     public float time;
     public DateTime startTime;
@@ -15,7 +15,8 @@ class Cooldown {
     }
 
     public float timeLeft() {
-        return startTime.AddSeconds(time).Second - DateTime.Now.Second;
+        var t = startTime.AddSeconds(time);
+        return t.Second - DateTime.Now.Second;
     }
 
     public bool IsIn() {
