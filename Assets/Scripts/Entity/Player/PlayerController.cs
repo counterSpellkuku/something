@@ -9,6 +9,7 @@ namespace Entity.Player {
         private Vector2 moveInput;
         public float inSkill, atkCool, preventInput, stopMove;
         protected override Color damageColor => Color.red;
+        public int facing;
         public bool isMoving;
         [SerializeField]
         Animator shadowAnim;
@@ -21,7 +22,8 @@ namespace Entity.Player {
             rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
             RecordSystem.Instance.player = this;
             keys = new HashSet<KeyCode>();
-            
+
+            facing = 1;
         }
 
         private void Update() {
@@ -73,14 +75,20 @@ namespace Entity.Player {
             if (moveInput.x > 0) {
                 animator.SetBool("toRight", true);
                 shadowAnim.SetBool("toRight", true);
-                render.flipX = false;
+                facing = 1;
             } else if (moveInput.x < 0) {
                 animator.SetBool("toRight", true);
                 shadowAnim.SetBool("toRight", true);
-                render.flipX = true;
+                facing = -1;
             } else {
                 animator.SetBool("toRight", false);
                 shadowAnim.SetBool("toRight", false);
+            }
+
+            if (facing == 1) {
+                render.flipX = false;
+            } else if (facing == -1) {
+                render.flipX = true;
             }
         }
 

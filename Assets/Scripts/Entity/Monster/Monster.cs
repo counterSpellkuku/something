@@ -20,9 +20,16 @@ namespace Entity.Monster {
         public MonsterState state;
         protected Vector2 moveDelta;
 
+        public int facing = 1;
+        int faceDef;
+
         void Start()
         {
             player = FindFirstObjectByType<PlayerController>();
+
+            faceDef = facing;
+
+            facing = 1 * faceDef;
 
             MobStart();
         }
@@ -36,6 +43,12 @@ namespace Entity.Monster {
                 atkCool -= Time.deltaTime;
             if (stopMove > 0)
                 stopMove -= Time.deltaTime;
+
+            if (facing == 1) {
+                render.flipX = false;
+            } else if (facing == -1) {
+                render.flipX = true;
+            }
 
             MobUpdate();
         }
@@ -54,6 +67,8 @@ namespace Entity.Monster {
             } else if (target.position.x < transform.position.x) {
                 moveDelta.x = -1;
             }
+
+            facing = (int)moveDelta.x * faceDef;
 
             if (target.position.y > transform.position.y) {
                 moveDelta.y = 1;

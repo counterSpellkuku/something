@@ -30,6 +30,8 @@ namespace Entity.Monster {
             atkCool = 1f;
             stopMove = 1f;
 
+            animator.SetTrigger("attack");
+
             float distance = Dist(player.transform);
             
 
@@ -39,7 +41,7 @@ namespace Entity.Monster {
 
             Stop();
 
-            if (Dist(player.transform) <= 1.2f) {
+            if (Dist(player.transform) <= 1.5f) {
                 player.GetDamage(baseDamage, this);
                 player.KnockBack(transform.position, 8, 0.2f);
 
