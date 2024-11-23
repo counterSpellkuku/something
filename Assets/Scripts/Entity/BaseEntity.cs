@@ -84,7 +84,9 @@ namespace Entity
         }
         
 
-        protected void Move(Vector2 moveInput) {
+        protected void Move(Vector2 moveInput)
+        {
+            if (onknockBack) return;
             Vector2 targetVelocity = moveInput * speed;
             
             if (moveInput != Vector2.zero)
