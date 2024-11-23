@@ -1,5 +1,13 @@
+using System.Collections;
+using UnityEngine;
+
 namespace Entity.Monster {
-    public class Goblin : Monster {
+    public class Slime : Monster {
+        float speedDef;
+        protected override void MobStart()
+        {
+            speedDef = speed;
+        }
         protected override void MobUpdate()
         {
             if (state == MonsterState.Idle) {
@@ -9,23 +17,30 @@ namespace Entity.Monster {
             }
 
             else if (state == MonsterState.Chase) {
-                if (Dist(player.transform) <= 2f) {
-                    Attack();
+                if (Dist(player.transform) <= 3f) {
+                    StartCoroutine(Attack());
                 } else {
                     Chase(player.transform);
                 }
             }
         }
 
-        void Attack() {
+        IEnumerator Attack() {
             if (atkCool > 0) {
-                return;
+                yield break;
             }
+
+            
 
             player.GetDamage(baseDamage * 0.8f, this);
 
-            atkCool = 0.3f;
-            stopMove = 0.1f;
+            atkCool = 1f;
+            stopMove = 1f;
+            
+
+            rigid.linearVelocity = Vector2.zero;
+
+            
         }
     }
 }

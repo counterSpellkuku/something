@@ -22,6 +22,8 @@ namespace Entity.Monster {
         void Start()
         {
             player = FindFirstObjectByType<PlayerController>();
+
+            MobStart();
         }
 
         // Update is called once per frame
@@ -37,6 +39,7 @@ namespace Entity.Monster {
             MobUpdate();
         }
 
+        protected virtual void MobStart() {}
         protected virtual void MobUpdate() {}
 
         public void Chase(Transform target) {

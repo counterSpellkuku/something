@@ -5977,7 +5977,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.14547536, g: 0.990566, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6017,8 +6017,8 @@ MonoBehaviour:
   Name: 
   currentHp: 20
   maxHp: 20
-  speed: 2
-  maxSpeed: 3
+  speed: 10
+  maxSpeed: 12
   rigid: {fileID: 0}
   col: {fileID: 0}
   acceleration: 50
@@ -6028,7 +6028,7 @@ MonoBehaviour:
   inSkill: 0
   atkCool: 0
   stopMove: 0
-  baseDamage: 10
+  baseDamage: 3
   state: 0
 --- !u!61 &1197292127
 BoxCollider2D:
