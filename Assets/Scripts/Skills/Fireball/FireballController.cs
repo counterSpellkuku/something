@@ -20,7 +20,7 @@ public class FireballController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private float speed = 0.1f;
     [SerializeField] private float maxTravelTime = 3f;
-    [SerializeField] private float damage;
+    private float damage;
     
     private float fadeOutDuration = 1f; // 알파값을 줄이는 시간
     private SpriteRenderer spriteRenderer; // SpriteRenderer를 알파값 조정을 위해 추가
@@ -76,7 +76,7 @@ public class FireballController : MonoBehaviour
             var entity = target.GetComponent<BaseEntity>();
             if (entity != null)
             {
-                entity.GetDamage(10);
+                entity.GetDamage(damage);
                 alreadyDamaged.Add(target.gameObject);
             }
 

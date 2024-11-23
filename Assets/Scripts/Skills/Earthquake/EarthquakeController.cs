@@ -44,7 +44,7 @@ namespace Skills.Earthquake
         
         
         /// <summary>
-        /// 애니메이션 끝에서 실행되게 해주세요.
+        /// 애니메이션 끝에서 이벤트로 실행되게 해주세요.
         /// </summary>
         public void FinishEarthquake()
         {
