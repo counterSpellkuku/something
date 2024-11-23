@@ -13,9 +13,9 @@ namespace Entity.Shadow
         private PlayerState currentState;
         private List<PlayerState> states;
         private int idx;
-        public void Awake() {
+        public new void Awake() {
+            base.Awake();
             states = FileManager.GetShadow();
-            
         }
 
         public void Start()
@@ -23,18 +23,17 @@ namespace Entity.Shadow
             currentState = states[0];
             idx = 0;
         }
-
-        public void Update() {
-            
-        }
+        
 
         public void FixedUpdate() {
+            base.FixedUpdate();
+            
             Vector2 dir = Vector2.zero;
             foreach (KeyCode code in currentState.activeKeys) { dir += GetDirection(code); }
             
             // 스킬 체크 로직 추가
             Move(dir.normalized);
-            if(states.Count < idx)
+            if(states.Count > 1+idx)
                 currentState = states[++idx];
 
         }
