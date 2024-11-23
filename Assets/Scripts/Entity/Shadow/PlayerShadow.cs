@@ -7,6 +7,7 @@ using Mono.Cecil.Cil;
 using Skills.Earthquake;
 using Skills.Fireball;
 using Skills.Missile;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Entity.Shadow
@@ -27,6 +28,10 @@ namespace Entity.Shadow
         public FireballSkill fire;
         public IceageSkill ice;
         public MissileSkill missile;
+        bool isMoving, toRight;
+        int facing, faceY;
+        Weapon heldWeapon;
+        
         
         public new void Awake() {
             base.Awake();
@@ -42,6 +47,9 @@ namespace Entity.Shadow
             fire = GetComponent<FireballSkill>();
             ice = GetComponent<IceageSkill>();
             missile = GetComponent<MissileSkill>();
+            animator = transform.AddComponent<Animator>();
+            
+            animator.runtimeAnimatorController = GameManager.Instance.player.animator.runtimeAnimatorController;
         }
         
 
@@ -55,13 +63,65 @@ namespace Entity.Shadow
                 CheckSkill(code);
             }
             
-            
+            Animate(dir.normalized);
             
             // 스킬 체크 로직 추가
             Move(dir.normalized);
             if(states.Count > 1+idx)
                 currentState = states[++idx];
 
+        }
+
+        private void Animate(Vector2 direction) {
+            animator.SetBool("isMoving", isMoving);
+
+            if (isMoving) {
+                ApplyDirection(direction);
+            }
+
+            if (facing == 1) {
+                render.flipX = false;
+            } else if (facing == -1) {
+                render.flipX = true;
+            }
+
+            if (heldWeapon != null) {
+                heldWeapon.animator.SetBool("isMoving", isMoving);
+                
+                heldWeapon.animator.SetInteger("faceY", animator.GetInteger("faceY"));
+
+                heldWeapon.animator.SetBool("toRight", animator.GetBool("toRight"));
+
+                heldWeapon.render.flipX = render.flipX;
+            }
+        }
+
+        public void ApplyDirection(Vector2 direction) {
+            if (direction.y > 0) {
+                faceY = 1;
+            } else if (direction.y < 0) {
+                faceY = -1;
+            } else {
+                animator.SetInteger("faceY", 0);
+            }
+
+            if (direction.y != 0) {
+                animator.SetInteger("faceY", faceY);
+            }
+
+            if (direction.x > 0) {
+                toRight = true;
+                facing = 1;
+            } else if (direction.x < 0) {
+                toRight = true;
+                facing = -1;
+            } else {
+                animator.SetBool("toRight", false);
+            }
+
+            if (direction.x != 0) {
+                animator.SetBool("toRight", toRight);
+            }
         }
         
         public Vector2 GetDirection(KeyCode code) {
