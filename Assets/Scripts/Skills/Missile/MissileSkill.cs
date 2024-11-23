@@ -23,16 +23,9 @@ namespace Skills.Missile
             skillCool = new Cooldown(cooldown);
         }
         
-        public override void ActivateToObject(GameObject user, GameObject target)
+        public override bool ActivateToObject(GameObject user, GameObject target)
         {
-            if (skillCool.IsIn())
-            {
-                Debug.Log("Skill is on cooldown!");
-                return;
-            }
-
-            skillCool.Start();
-            base.ActivateToObject(user, target);
+            return base.ActivateToObject(user, target);
         }
         
         protected override void ExecuteToObject(GameObject user, GameObject target)
@@ -51,7 +44,7 @@ namespace Skills.Missile
             throw new System.NotImplementedException();
         }
 
-        override public void ActivateToVector3(GameObject user, Vector3 targetVec)
+        override public bool ActivateToVector3(GameObject user, Vector3 targetVec)
         {
             throw new System.NotImplementedException();
         }
