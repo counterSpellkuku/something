@@ -18,7 +18,7 @@ namespace Entity.Monster {
         }
 
         void Attack() {
-            if (atkCool > 0 || !playerFound) {
+            if (atkCool > 0) {
                 return;
             }
 

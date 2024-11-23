@@ -22,6 +22,8 @@ namespace Entity
         [SerializeField] private float deceleration = 50f;
         [SerializeField] protected Vector2 currentVelocity;
 
+        protected virtual Color damageColor => Color.white;
+
 
         public void Awake()
         {
@@ -34,11 +36,9 @@ namespace Entity
             bool cancel = false;
             OnHurt(damage, attacker, ref cancel);
 
-            Debug.Log("hurted");
-
             if (cancel) return false;
 
-            Debug.Log("hurted not Canceled");
+            DamageIndicator.Show(transform.position + new Vector3(UnityEngine.Random.Range(-0.5f, 0.5f), UnityEngine.Random.Range(-0.2f, 0.2f) + 0.5f), damage, damageColor);
             
             currentHp -= damage;
             if (currentHp <= 0f)

@@ -8,6 +8,7 @@ namespace Entity.Player
         
         private Vector2 moveInput;
         public float inSkill, atkCool, preventInput, stopMove;
+        protected override Color damageColor => Color.red;
 
         private void Start() {
             rigid = GetComponent<Rigidbody2D>();

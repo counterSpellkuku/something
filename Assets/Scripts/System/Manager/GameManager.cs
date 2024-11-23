@@ -50,7 +50,13 @@ namespace System.Manager {
         void Update() {
             if (state == GameState.Started) {
                 playTime += Time.deltaTime;
+
+                FollowCamera();
             }
+        }
+
+        void FollowCamera() {
+            CamManager.main.transform.position = new Vector3(CamManager.main.transform.position.x, Mathf.Lerp(CamManager.main.transform.position.y, player.transform.position.y, 6 * Time.deltaTime), CamManager.main.transform.position.z);
         }
 
         void OnDestroy() {

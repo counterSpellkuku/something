@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4222982731023052916}
   - component: {fileID: 5317837419099936757}
   - component: {fileID: 4657284540536850605}
+  - component: {fileID: 1972861084134450}
+  - component: {fileID: 9106557545017069446}
   m_Layer: 0
   m_Name: DamageInfo
   m_TagString: Untagged
@@ -60,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7891201095211585801, guid: 98a17a5537f2cb14b97061ac64e7e29b, type: 2}
+  - {fileID: 3121817830403587664, guid: 13f48d273b4af2144acba893c68d8776, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,8 +106,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 100
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 98a17a5537f2cb14b97061ac64e7e29b, type: 2}
-  m_sharedMaterial: {fileID: 7891201095211585801, guid: 98a17a5537f2cb14b97061ac64e7e29b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13f48d273b4af2144acba893c68d8776, type: 2}
+  m_sharedMaterial: {fileID: 3121817830403587664, guid: 13f48d273b4af2144acba893c68d8776, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -176,3 +178,29 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 5317837419099936757}
   m_maskType: 0
+--- !u!114 &1972861084134450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8703983102605220539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e37a585661637f489f0a1ae52a64ba4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9106557545017069446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8703983102605220539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c6168fe0791824c859a1b3a3930ad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingLayer: fieldUI
+  sortingOrder: 0
