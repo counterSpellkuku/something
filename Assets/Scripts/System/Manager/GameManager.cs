@@ -23,7 +23,7 @@ namespace System.Manager {
         
         #endregion
         [SerializeField]
-        PlayerController player;
+        public PlayerController player;
         void Awake() {
             Instance = this;
             player = FindFirstObjectByType<PlayerController>();

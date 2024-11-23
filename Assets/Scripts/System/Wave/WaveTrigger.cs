@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using Entity.Monster;
 using UnityEngine;
 using Util;
 
@@ -7,22 +7,47 @@ namespace System.Wave {
     [RequireComponent(typeof(BoxCollider2D))]
     public class WaveTrigger : MonoBehaviour {
         public BoxCollider2D boxCollider { private set;  get; }
+        public SpriteRenderer renderer;
         [SerializeField] public WaveData data;
         public bool isColliding { private set; get; }
 
 
         public float currentDelay;
         public float delay = 1.5f;
-        protected void Start() {
+
+        public bool complete;
+
+
+        public void Awake()
+        {
             isColliding = false;
             boxCollider = GetComponent<BoxCollider2D>();
             
             if (boxCollider == null) {
                 boxCollider = gameObject.AddComponent<BoxCollider2D>();
             }
-            
-            WaveSystem.Instance.colliders.Add(this);
+
+            renderer = GetComponent<SpriteRenderer>();
             boxCollider.isTrigger = true;
+            complete = false;
+
+            if (this.gameObject.name == "First")
+            {
+                renderer.enabled = false;
+                GetComponent<Collider2D>().isTrigger = true;
+            }
+            else {
+                Debug.Log(this.gameObject);
+                renderer.enabled = true;
+                GetComponent<Collider2D>().isTrigger = false;
+            }
+
+        }
+
+        protected void Start() {
+           
+            // WaveSystem.Instance.colliders.Add(this);
+            
         }
         
         void OnTriggerEnter2D(Collider2D other)
@@ -34,6 +59,8 @@ namespace System.Wave {
         void OnTriggerStay2D(Collider2D other)
         {
             HandleCollision(other, "ing");
+            
+
         }
 
         void OnTriggerExit2D(Collider2D other)

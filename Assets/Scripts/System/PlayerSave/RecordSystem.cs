@@ -18,19 +18,20 @@ namespace System.PlayerSave
         // 시간 정보
         public float timestamp;
         public float deltaTime;
-        
+        public int weaponId;
         
         // 입력 정보
         public HashSet<KeyCode> activeKeys;
         
         public PlayerState(Vector2 position, Vector2 velocity, Vector2 mousePosition,
-            float timestamp, float deltaTime, params KeyCode[] keys) {
+            float timestamp, float deltaTime, int weaponId, params KeyCode[] keys) {
             
             this.position = position;
             this.currentVelocity = velocity;
             this.mousePosition = mousePosition;
             this.timestamp = timestamp;
             this.deltaTime = deltaTime;
+            this.weaponId = weaponId;
             this.activeKeys = new HashSet<KeyCode>(keys);
             
         }
@@ -126,23 +127,24 @@ namespace System.PlayerSave
 
         
         // 레코드 Add 값
-        public void Record(params KeyCode[] keyCodes) {
+        public void Record(int currentWeapon, params KeyCode[] keyCodes) {
             if (player == null) return;
             
             // 새로운 상태 생성
             PlayerState currentState = new PlayerState(
                 player.transform.position,
                 player.rigid.linearVelocity,
-                Input.mousePosition,
+                GetMousePosition(),
                 Time.time,
                 Time.deltaTime,
+                currentWeapon,
                 keyCodes.ToArray()
             );
         
             Record(currentState);
         }
-        public void Record(Vector2 position, Vector2 velocity, float time, float deltaTime, params KeyCode[] keys){
-            Record(new PlayerState(position, velocity, Input.mousePosition, time, deltaTime, keys));
+        public void Record(Vector2 position, Vector2 velocity, float time, float deltaTime, int currentWeapon, params KeyCode[] keys){
+            Record(new PlayerState(position, velocity, Input.mousePosition, time, deltaTime, currentWeapon, keys));
         }
 
         public void Record(PlayerState currentState) {
@@ -186,6 +188,16 @@ namespace System.PlayerSave
             // FileManager.SaveData("PlayerShadow", GetRecordedStates().ToArray());
             FileManager.SaveEnd();
             RecordSystem.Instance = null;
+        }
+
+        public Vector2 GetMousePosition() {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Plane plane = new Plane(Vector3.up, 0);
+            float distance;
+            if (plane.Raycast(ray, out distance))
+                return ray.GetPoint(distance);
+
+            return Vector2.zero;
         }
     }
 }

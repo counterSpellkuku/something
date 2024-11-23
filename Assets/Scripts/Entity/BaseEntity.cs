@@ -139,6 +139,12 @@ namespace Entity
             rigid.AddForce(direction * force, ForceMode2D.Impulse);
         }
 
+        public void SetHP(int max, int current)
+        {
+            maxHp = maxHp + max;
+            currentHp = current + currentHp;
+        }
+
 
     }
 }
