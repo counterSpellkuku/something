@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - wall
+  - player
+  - monster
+  - projectile
   - 
   - 
   - 
@@ -41,3 +41,29 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: tile
+    uniqueID: 2538460151
+    locked: 0
+  - name: monster
+    uniqueID: 3317972553
+    locked: 0
+  - name: itemBack
+    uniqueID: 1138193965
+    locked: 0
+  - name: player
+    uniqueID: 907792019
+    locked: 0
+  - name: itemFront
+    uniqueID: 141093359
+    locked: 0
+  - name: particle
+    uniqueID: 2247115535
+    locked: 0
+  - name: fieldUI
+    uniqueID: 2537520881
+    locked: 0
+  - name: UI
+    uniqueID: 2327967657
+    locked: 0
+  m_RenderingLayers:
+  - Default
