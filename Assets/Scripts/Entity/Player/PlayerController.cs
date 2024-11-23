@@ -3,9 +3,18 @@ using System.Linq;
 using System.Manager;
 using System.PlayerSave;
 using System.Weapon;
+using Skills.Earthquake;
+using Skills.Fireball;
+using Skills.Missile;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Entity.Player {
+    
+    [RequireComponent(typeof(EarthquakeSkill))]
+    [RequireComponent(typeof(FireballSkill))]
+    [RequireComponent(typeof(IceageSkill))]
+    [RequireComponent(typeof(MissileSkill))]
     public class PlayerController : BaseEntity {
         private Vector2 moveInput;
         public float inSkill, atkCool, preventInput, stopMove;
@@ -17,6 +26,12 @@ namespace Entity.Player {
         int faceY;
         bool toRight;
 
+        public EarthquakeSkill earth;
+        public FireballSkill fire;
+        public IceageSkill ice;
+        public MissileSkill missile;
+
+        
         private HashSet<KeyCode> keys;
         
         private void Start() {
@@ -27,6 +42,12 @@ namespace Entity.Player {
             keys = new HashSet<KeyCode>();
 
             facing = 1;
+            
+            
+            earth = GetComponent<EarthquakeSkill>();
+            fire = GetComponent<FireballSkill>();
+            ice = GetComponent<IceageSkill>();
+            missile = GetComponent<MissileSkill>();
         }
 
         private void Update() {
@@ -61,10 +82,24 @@ namespace Entity.Player {
                 }
             }
 
+            
             // 플레이어 스킬마다 추가해야됨.
-            
-            
 
+            
+            if (Input.GetKeyDown(KeyCode.Alpha1)) {
+                if(earth.ActivateToVector3(this.gameObject, Vector3.one))
+                    keys.Add(KeyCode.Alpha1);
+            } else if (Input.GetKeyDown(KeyCode.Alpha2)) {
+                if (fire.ActivateToVector3(this.gameObject, RecordSystem.Instance.GetMousePosition()))
+                    keys.Add(KeyCode.Alpha2);
+            } else if (Input.GetKeyDown(KeyCode.Alpha3)) {
+                if (ice.ActivateToVector3(this.gameObject, Vector3.one))
+                    keys.Add(KeyCode.Alpha3);
+            } else if (Input.GetKeyDown(KeyCode.Alpha4)) {
+                if (missile.ActivateToObject(this.gameObject, GetNearTarget().gameObject))
+                    keys.Add(KeyCode.Alpha4);
+            }
+            
 
             if (inSkill > 0)
                 inSkill -= Time.deltaTime;
@@ -76,6 +111,12 @@ namespace Entity.Player {
                 stopMove -= Time.deltaTime;
             
             Animate();
+        }
+
+
+        public Transform GetNearTarget() {
+            Vector3 pos = RecordSystem.Instance.GetMousePosition();
+            return Physics2D.OverlapCircle(pos, 5f, 1 << LayerMask.NameToLayer("monster")).transform;
         }
 
         private void Animate() {

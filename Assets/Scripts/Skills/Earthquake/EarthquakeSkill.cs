@@ -9,13 +9,7 @@ namespace Skills.Earthquake
     {
         [SerializeField] private GameObject earthquakePrefab; // 지진 프리팹
         [SerializeField] private float damage = 10f; // 스킬 데미지
-
-        private Cooldown skillCool;
-
-        private void Awake()
-        {
-            skillCool = new Cooldown(cooldown);
-        }
+        
         
         public override bool ActivateToVector3(GameObject user, Vector3 target)
         {

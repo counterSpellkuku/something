@@ -83,16 +83,17 @@ namespace Entity.Shadow
             Weapon weapon;
             switch (code) {
                 case KeyCode.Alpha1:
-                    earth.Activate(this.gameObject, this.gameObject);
+                    earth.ActivateToVector3(this.gameObject, Vector3.one);
                     break;
                 case KeyCode.Alpha2:
+                    fire.ActivateToVector3(this.gameObject, currentState.mousePosition);
                     // fire.Activate(this.gameObject, );
                     break;
                 case KeyCode.Alpha3:
-                    ice.Activate(this.gameObject, this.gameObject);
+                    ice.ActivateToVector3(this.gameObject, Vector3.one);
                     break;
                 case KeyCode.Alpha4:
-                    missile.Activate(this.gameObject, GameManager.Instance.player.gameObject);
+                    missile.ActivateToObject(this.gameObject, GameManager.Instance.player.gameObject);
                     break;
                 
                 case KeyCode.Mouse0 :
