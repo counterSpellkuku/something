@@ -55,7 +55,11 @@ namespace Hunger_of_war.Util {
                 col.isTrigger = true;   
                 col.size = Vector2.one;
             } else if (shape == DamageAreaShape.FanShaped) {
-                //여기 해주세여 ㅎㅎ
+                SectorCollider sector = obj.AddComponent<SectorCollider>();
+                sector.targetLayer = LayerMask.NameToLayer("monster");
+                sector.obstacleLayer = LayerMask.NameToLayer("wall");
+                sector.radius = length;
+                sector.angle = (width * 180f) / (Mathf.PI * length);
             }
 
             render.sortingLayerName = "damageArea";
@@ -67,7 +71,6 @@ namespace Hunger_of_war.Util {
         void Start() {
             render = GetComponent<SpriteRenderer>();
             col = GetComponent<BoxCollider2D>();
-            sector = this.transform.AddComponent<SectorCollider>();
             transform.localScale = new Vector3(width, length);
             transform.localPosition = new Vector3(0, length / 2) + offset;
         }

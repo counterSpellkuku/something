@@ -11,8 +11,8 @@ namespace System.Weapon {
         DamageArea rightArea;
         DamageArea leftArea;
         void Start() {
-            rightArea = DamageArea.Init(transform, DamageAreaShape.Square, 3f, 2.5f);
-            leftArea = DamageArea.Init(transform, DamageAreaShape.Square, 2f, 1.5f);
+            rightArea = DamageArea.Init(transform, DamageAreaShape.FanShaped, 3f, 2.5f);
+            leftArea = DamageArea.Init(transform, DamageAreaShape.FanShaped, 2f, 1.5f);
         }
         public override void OnAttatch()
         {
