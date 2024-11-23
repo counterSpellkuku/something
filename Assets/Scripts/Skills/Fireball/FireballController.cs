@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Entity;
 using UnityEngine;
 
@@ -26,6 +27,8 @@ public class FireballController : MonoBehaviour
     private bool canFly = true;
     private float currentTravelTime = 0f;
     private Vector3 initialDirection;
+    
+    private HashSet<GameObject> alreadyDamaged;
 
     public void Init(GameObject target, float damage)
     {
@@ -47,6 +50,7 @@ public class FireballController : MonoBehaviour
         {
             Debug.LogError("SpriteRenderer not found! Please attach a SpriteRenderer to this GameObject.");
         }
+        alreadyDamaged = new HashSet<GameObject>();
     }
 
     private void Update()
@@ -58,7 +62,7 @@ public class FireballController : MonoBehaviour
         if (currentTravelTime >= maxTravelTime)
         {
             canFly = false;
-            StartCoroutine(FadeOutAndDestroy());
+            StartCoroutine(FadeOutAndDestroy(fadeOutDuration));
             return;
         }
 
@@ -67,14 +71,19 @@ public class FireballController : MonoBehaviour
 
         // 타겟에 충돌 처리
         foreach (Transform target in projectile.targets) {
-            print(target.name);
+            
+            if (alreadyDamaged.Contains(target.gameObject)) continue;
             var entity = target.GetComponent<BaseEntity>();
             if (entity != null)
             {
                 entity.GetDamage(10);
+                alreadyDamaged.Add(target.gameObject);
             }
+
+            StartCoroutine(FadeOutAndDestroy(0.5f));
         }
     }
+    
     
 
     private void RotateTowardsDirection(Vector3 direction)
@@ -83,25 +92,18 @@ public class FireballController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
     
-    /// <summary>
-    /// 어디에 부딪힌 경우 Explode 애니메이션 이벤트에서 작동합니다~
-    /// </summary>
-    public void DestroyThis()
-    {
-        Destroy(gameObject);
-    }
 
-    private IEnumerator FadeOutAndDestroy()
+    private IEnumerator FadeOutAndDestroy(float dur)
     {
         Debug.Log("Fireball reached max distance. Fading out.");
 
         float elapsedTime = 0f;
         Color originalColor = spriteRenderer.color;
 
-        while (elapsedTime < fadeOutDuration)
+        while (elapsedTime < dur)
         {
             elapsedTime += Time.deltaTime;
-            float alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeOutDuration);
+            float alpha = Mathf.Lerp(1f, 0f, elapsedTime / dur);
             spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
             yield return null;
         }
