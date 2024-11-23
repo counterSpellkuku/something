@@ -14,6 +14,8 @@ namespace Entity.Player {
         public float baseDamage;
         public bool isMoving;
         public Weapon heldWeapon;
+        int faceY;
+        bool toRight;
 
         private HashSet<KeyCode> keys;
         
@@ -77,28 +79,9 @@ namespace Entity.Player {
         private void Animate() {
             animator.SetBool("isMoving", isMoving);
             shadowAnim.SetBool("isMoving", isMoving);
-            if (moveInput.y > 0) {
-                animator.SetInteger("faceY", 1);
-                shadowAnim.SetInteger("faceY", 1);
-            } else if (moveInput.y < 0) {
-                animator.SetInteger("faceY", -1);
-                shadowAnim.SetInteger("faceY", -1);
-            } else {
-                animator.SetInteger("faceY", 0);
-                shadowAnim.SetInteger("faceY", 0);
-            }
 
-            if (moveInput.x > 0) {
-                animator.SetBool("toRight", true);
-                shadowAnim.SetBool("toRight", true);
-                facing = 1;
-            } else if (moveInput.x < 0) {
-                animator.SetBool("toRight", true);
-                shadowAnim.SetBool("toRight", true);
-                facing = -1;
-            } else {
-                animator.SetBool("toRight", false);
-                shadowAnim.SetBool("toRight", false);
+            if (isMoving) {
+                ApplyDirection(moveInput);
             }
 
             if (facing == 1) {
@@ -109,29 +92,52 @@ namespace Entity.Player {
 
             if (heldWeapon != null) {
                 heldWeapon.animator.SetBool("isMoving", isMoving);
-                if (moveInput.y > 0) {
-                    heldWeapon.animator.SetInteger("faceY", 1);
-                } else if (moveInput.y < 0) {
-                    heldWeapon.animator.SetInteger("faceY", -1);
-                } else {
-                    heldWeapon.animator.SetInteger("faceY", 0);
-                }
+                
+                heldWeapon.animator.SetInteger("faceY", animator.GetInteger("faceY"));
 
-                if (moveInput.x > 0) {
-                    heldWeapon.animator.SetBool("toRight", true);
-                    facing = 1;
-                } else if (moveInput.x < 0) {
-                    heldWeapon.animator.SetBool("toRight", true);
-                    facing = -1;
-                } else {
-                    heldWeapon.animator.SetBool("toRight", false);
-                }
+                heldWeapon.animator.SetBool("toRight", animator.GetBool("toRight"));
 
-                if (facing == 1) {
-                    heldWeapon.render.flipX = false;
-                } else if (facing == -1) {
-                    heldWeapon.render.flipX = true;
-                }
+                heldWeapon.render.flipX = render.flipX;
+            }
+        }
+
+        public void DirectionToMouse() {
+            //DirectionTo()
+        }
+
+        public void DirectionTo(Vector3 pos) {
+            ApplyDirection(pos - transform.position);
+        }
+
+        public void ApplyDirection(Vector2 direction) {
+            if (direction.y > 0) {
+                faceY = 1;
+            } else if (direction.y < 0) {
+                faceY = -1;
+            } else {
+                animator.SetInteger("faceY", 0);
+                shadowAnim.SetInteger("faceY", 0);
+            }
+
+            if (direction.y != 0) {
+                animator.SetInteger("faceY", faceY);
+                shadowAnim.SetInteger("faceY", faceY);
+            }
+
+            if (direction.x > 0) {
+                toRight = true;
+                facing = 1;
+            } else if (direction.x < 0) {
+                toRight = true;
+                facing = -1;
+            } else {
+                animator.SetBool("toRight", false);
+                shadowAnim.SetBool("toRight", false);
+            }
+
+            if (direction.x != 0) {
+                animator.SetBool("toRight", toRight);
+                shadowAnim.SetBool("toRight", toRight);
             }
         }
 

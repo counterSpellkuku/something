@@ -40,6 +40,9 @@ namespace System.Weapon {
 
             CamManager.main.Shake(1f);
 
+            animator.SetTrigger("attack1");
+            attatcher.animator.SetTrigger("attack1");
+
             foreach (BaseEntity target in leftArea.casted) {
                 target.GetDamage(attatcher.baseDamage * 0.6f);
                 target.KnockBack(transform.position, 1, 0.4f);
