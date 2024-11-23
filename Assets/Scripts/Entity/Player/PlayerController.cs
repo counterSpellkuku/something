@@ -50,12 +50,14 @@ namespace Entity.Player {
                 }
                 if (Input.GetMouseButtonUp(0)) {
                     heldWeapon.OnMouseLeftkUp();
+                    keys.Add(KeyCode.Mouse0);
                 }
                 if (Input.GetMouseButtonDown(1)) {
                     heldWeapon.OnMouseRightDown();
                 }
                 if (Input.GetMouseButtonUp(1)) {
                     heldWeapon.OnMouseRightkUp();
+                    keys.Add(KeyCode.Mouse1);
                 }
             }
 

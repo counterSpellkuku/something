@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Manager;
 using System.PlayerSave;
+using System.Weapon;
 using Mono.Cecil.Cil;
 using Skills.Earthquake;
 using Skills.Fireball;
@@ -79,6 +80,7 @@ namespace Entity.Shadow
 
         public void CheckSkill(KeyCode code) {
             Debug.Log(code);
+            Weapon weapon;
             switch (code) {
                 case KeyCode.Alpha1:
                     earth.Activate(this.gameObject, this.gameObject);
@@ -91,6 +93,17 @@ namespace Entity.Shadow
                     break;
                 case KeyCode.Alpha4:
                     missile.Activate(this.gameObject, GameManager.Instance.player.gameObject);
+                    break;
+                
+                case KeyCode.Mouse0 :
+                    weapon = WeaponManager.FindById(currentState.weaponId.ToString());
+                    if (weapon == null) return;
+                    weapon.OnMouseLeftkUp();
+                    break;
+                case KeyCode.Mouse1:
+                    weapon = WeaponManager.FindById(currentState.weaponId.ToString());
+                    if (weapon == null) return;
+                    weapon.OnMouseRightkUp();
                     break;
             }
             
