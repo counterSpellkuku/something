@@ -14,12 +14,12 @@ namespace Entity
         [SerializeField] protected float speed, maxSpeed;
         
         [Header("Component")]
-        [SerializeField] protected Rigidbody2D rigid;
-        [SerializeField] protected BoxCollider2D col;
-        
-        [Header("RigidBody Settings")]
-        [SerializeField] private float acceleration = 50f;
-        [SerializeField] private float deceleration = 50f;
+        public Rigidbody2D rigid { get; protected set; }
+        public BoxCollider2D col { get; protected set; }
+
+        [Header("RigidBody Settings")] 
+        [SerializeField] public float acceleration = 50f;
+        [SerializeField] public float deceleration = 50f;
         [SerializeField] protected Vector2 currentVelocity;
 
         protected virtual Color damageColor => Color.white;
@@ -81,9 +81,11 @@ namespace Entity
             }
 
             currentVelocity = Vector2.ClampMagnitude(currentVelocity, maxSpeed);
-
+            
             rigid.linearVelocity = currentVelocity;
         }
+
+        protected void Stop() { currentVelocity = Vector2.zero; }
 
 
     }
