@@ -9,13 +9,13 @@ namespace Entity
     public class BaseEntity : MonoBehaviour
     {
         [Header("Stats")]
-        [SerializeField] public string name;
+        [SerializeField] public string Name;
         [SerializeField] protected float currentHp, maxHp;
         [SerializeField] protected float speed, maxSpeed;
         
         [Header("Component")]
         [SerializeField] protected Rigidbody2D rigid;
-        [SerializeField] protected BoxCollider2D collider;
+        [SerializeField] protected BoxCollider2D col;
         
         [Header("RigidBody Settings")]
         [SerializeField] private float acceleration = 50f;
@@ -26,15 +26,19 @@ namespace Entity
         public void Awake()
         {
             rigid = GetComponent<Rigidbody2D>();
-            collider = GetComponent<BoxCollider2D>();
+            col = GetComponent<BoxCollider2D>();
         }
 
-        public virtual bool GetDamage(float damage, BaseEntity attacker) {
+        public virtual bool GetDamage(float damage, BaseEntity attacker = null) {
             // 특수 상황인 경우 override
             bool cancel = false;
             OnHurt(damage, attacker, ref cancel);
 
+            Debug.Log("hurted");
+
             if (cancel) return false;
+
+            Debug.Log("hurted not Canceled");
             
             currentHp -= damage;
             if (currentHp <= 0f)

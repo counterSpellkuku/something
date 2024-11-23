@@ -105,7 +105,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -113,10 +113,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!61 &603408209678808079
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -184,3 +184,8 @@ MonoBehaviour:
   collider: {fileID: 603408209678808079}
   acceleration: 50
   deceleration: 50
+  currentVelocity: {x: 0, y: 0}
+  inSkill: 0
+  atkCool: 0
+  preventInput: 0
+  stopMove: 0

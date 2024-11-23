@@ -4,7 +4,7 @@ using Vector2 = System.Numerics.Vector2;
 
 namespace System.PlayerSave
 {
-    [System.Serializable]
+    [Serializable]
     public class PlayerState : IEquatable<PlayerState>{
         public Vector2 position;
         public float timestamp;
