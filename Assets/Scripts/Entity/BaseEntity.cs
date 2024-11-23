@@ -33,6 +33,7 @@ namespace Entity
 
         private bool onknockBack;
         private float knockBackDuration;
+        public bool isDeath;
         
         public void Awake() {
             rigid = GetComponent<Rigidbody2D>();
@@ -69,7 +70,7 @@ namespace Entity
             }
             OnHurt(damage, attacker, ref cancel);
 
-            if (cancel) return false;
+            if (cancel || isDeath) return false;
 
             DamageIndicator.Show(transform.position + new Vector3(UnityEngine.Random.Range(-0.5f, 0.5f), UnityEngine.Random.Range(-0.2f, 0.2f) + 0.5f), damage, damageColor, isCrit);
             
@@ -97,7 +98,7 @@ namespace Entity
         
 
         protected void Move(Vector2 moveInput) {
-            if (onknockBack) {
+            if (onknockBack || isDeath) {
                 return;
             }
             

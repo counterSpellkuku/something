@@ -70,6 +70,9 @@ namespace System.Weapon {
 
             CamManager.main.Shake(3f);
 
+            animator.SetTrigger("attack_wide");
+            attatcher.animator.SetTrigger("attack_wide");
+
             attatcher.stopMove = 0.3f;
             attatcher.Stop();
 

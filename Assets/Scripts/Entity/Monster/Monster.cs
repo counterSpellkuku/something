@@ -21,7 +21,6 @@ namespace Entity.Monster {
 
         public MonsterState state;
         protected Vector2 moveDelta;
-        public bool isDeath;
         [SerializeField]
         Vector3 shadowOffset;
 
@@ -59,13 +58,15 @@ namespace Entity.Monster {
                 render.flipX = true;
             }
 
-            MobUpdate();
+            if (!isDeath) MobUpdate();
         }
 
         public override void Dead()
         {
             isDeath = true;
             animator.SetBool("isDeath", isDeath);
+
+            Stop();
             Destroy(gameObject, 1);
         }
 
