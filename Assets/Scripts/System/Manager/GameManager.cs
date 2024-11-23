@@ -25,6 +25,7 @@ namespace System.Manager {
         [SerializeField]
         PlayerController player;
         void Awake() {
+            Instance = this;
             player = FindFirstObjectByType<PlayerController>();
 
             if (StartGameOnAwake) {
