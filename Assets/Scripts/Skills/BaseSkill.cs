@@ -7,6 +7,7 @@ public abstract class BaseSkill : MonoBehaviour
 
     public virtual void Activate(GameObject user, GameObject target)
     {
+        Debug.Log($"{skillName} cast by {user.name}");
         Execute(user, target);
     }
 
