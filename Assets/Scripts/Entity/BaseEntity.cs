@@ -87,6 +87,8 @@ namespace Entity
         public virtual void GetHeal(float heal) {
             if (currentHp + heal > maxHp) currentHp = maxHp;
             else currentHp += heal;
+
+            DamageIndicator.Show(transform.position + new Vector3(UnityEngine.Random.Range(-0.5f, 0.5f), UnityEngine.Random.Range(-0.2f, 0.2f) + 0.5f), heal, Color.green);
         }
         
         public virtual void Dead() {

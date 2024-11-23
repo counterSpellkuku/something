@@ -10,9 +10,14 @@ namespace System.Weapon {
         Cooldown rightCool = new(4);
         DamageArea rightArea;
         DamageArea leftArea;
+
+        public override string Id => "woodenSword";
+
         void Start() {
-            rightArea = DamageArea.Init(transform, DamageAreaShape.FanShaped, 3f, 2.5f);
-            leftArea = DamageArea.Init(transform, DamageAreaShape.FanShaped, 2f, 1.5f);
+            rightArea = DamageArea.Init(transform, DamageAreaShape.FanShaped, 2.4f, 1.6f);
+            leftArea = DamageArea.Init(transform, DamageAreaShape.FanShaped, 1.8f, 1.4f);
+            rightArea.offset = new(0, -1);
+            leftArea.offset = new(0, -1);
         }
         public override void OnAttatch()
         {
