@@ -46,6 +46,7 @@ namespace System.Weapon {
             transform.SetParent(player.transform);
 
             attatcher = player;
+            player.heldWeapon = this;
 
             transform.localPosition = Vector2.zero;
         }

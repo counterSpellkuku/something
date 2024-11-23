@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.02, y: -0.39, z: 0}
-  m_LocalScale: {x: 1, y: 0.6046, z: 1}
+  m_LocalScale: {x: 1.2, y: 0.6046, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8878059075536747658}
@@ -299,7 +299,10 @@ MonoBehaviour:
   atkCool: 0
   preventInput: 0
   stopMove: 0
+  facing: 0
+  baseDamage: 0
   isMoving: 0
+  heldWeapon: {fileID: 0}
   shadowAnim: {fileID: 2355324192307360719}
 --- !u!95 &7433149597165720311
 Animator:

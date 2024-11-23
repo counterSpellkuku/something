@@ -11,10 +11,9 @@ namespace Entity.Player {
         public float inSkill, atkCool, preventInput, stopMove;
         protected override Color damageColor => Color.red;
         public int facing;
+        public float baseDamage;
         public bool isMoving;
         public Weapon heldWeapon;
-        [SerializeField]
-        Animator shadowAnim;
 
         private HashSet<KeyCode> keys;
         
@@ -111,7 +110,7 @@ namespace Entity.Player {
 
         protected override void OnHurt(float damage, BaseEntity attacker, ref bool cancel)
         {
-            CamManager.main.Shake(0.5f);
+            CamManager.main.Shake(0.2f);
         }
 
         private new void FixedUpdate() {

@@ -23,6 +23,8 @@ namespace Entity
         [SerializeField] public float acceleration = 50f;
         [SerializeField] public float deceleration = 50f;
         [SerializeField] protected Vector2 currentVelocity;
+        [SerializeField]
+        public Animator shadowAnim;
 
         protected virtual Color damageColor => Color.white;
 

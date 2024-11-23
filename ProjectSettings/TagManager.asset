@@ -56,6 +56,9 @@ TagManager:
   - name: player
     uniqueID: 907792019
     locked: 0
+  - name: damageArea
+    uniqueID: 2886929703
+    locked: 0
   - name: itemFront
     uniqueID: 141093359
     locked: 0
