@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4251640627151549826}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.35, y: 0.16, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48,13 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1de66f1eb84533986f88da5813ee82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iceblcokPrefab: {fileID: 0}
+  iceblcokPrefab: {fileID: 474159202642685710, guid: 2fe6af8dc53134cd49234ec4c2cadc07, type: 3}
   iceageCollider: {fileID: 5531776220123230169}
   animator: {fileID: 6040960614209594195}
   damageableLayer:
     serializedVersion: 2
     m_Bits: 256
-  freezeTime: 2
+  freezeTime: 5
 --- !u!212 &2366971594971473452
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -99,7 +99,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 719056619, guid: 6e6b6417cd6238443bcc98c1f20b1054, type: 3}
+  m_Sprite: {fileID: -1962523428519043737, guid: 5e22770988991044f9fd9a3be470957c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,7 +120,7 @@ Animator:
   m_GameObject: {fileID: 4251640627151549826}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6a96429a13ab74c01a93f2f10bc06167, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -140,7 +140,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4251640627151549826}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -197,7 +197,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 16, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
