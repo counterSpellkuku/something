@@ -8,7 +8,8 @@ namespace Entity
         [SerializeField] public string name;
         [SerializeField] protected float currentHp, maxHp;
         [SerializeField] protected float speed;
-
+        [SerializeField] protected Rigidbody2D rigid;
+        [SerializeField] protected BoxCollider2D collider;
         
         
         
