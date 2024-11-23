@@ -11,7 +11,6 @@ public class CamManager : MonoBehaviour
     public CinemachineCameraOffset camOffset;
     float orSize_d;
     float dutch_d;
-    Vector3 spectatorCam = new Vector3(-55.28f, -17.2f, -2f);
 
     IEnumerator dutchRoutine = null;
     IEnumerator offRoutine = null;
