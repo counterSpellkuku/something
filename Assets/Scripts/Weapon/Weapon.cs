@@ -1,3 +1,4 @@
+using System.Manager;
 using Entity.Player;
 using UnityEngine;
 
@@ -53,6 +54,10 @@ namespace System.Weapon {
 
             attatcher = player;
             player.heldWeapon = this;
+
+            if (UIManager.Instance != null) {
+                UIManager.Instance.weaponBack.sprite = UIManager.Instance.weaponImg.sprite = render.sprite;
+            }
 
             transform.localPosition = Vector2.zero;
         }

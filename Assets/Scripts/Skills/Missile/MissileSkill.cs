@@ -1,4 +1,5 @@
 
+using System.Manager;
 using Entity;
 using UnityEngine;
 
@@ -21,6 +22,12 @@ namespace Skills.Missile
         private void Awake()
         {
             skillCool = new Cooldown(cooldown);
+        }
+
+        void Update() {
+            if (skillCool.IsIn()) {
+                UIManager.Instance.skill4Col.fillAmount = skillCool.timeLeft() / skillCool.time;
+            }
         }
         
         public override bool ActivateToObject(GameObject user, GameObject target)

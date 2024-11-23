@@ -82,6 +82,15 @@ namespace Entity.Player {
                 }
             }
 
+            if (UIManager.Instance != null) {
+                if (heldWeapon == null) {
+                    UIManager.Instance.weaponBack.sprite = UIManager.Instance.weaponImg.sprite = null;
+                }
+
+                UIManager.Instance.hpRate.value = currentHp / maxHp;
+                UIManager.Instance.hpTextBack.text = UIManager.Instance.hpText.text = ((int)currentHp).ToString() + "/" + ((int)maxHp).ToString();
+            }
+
             
             // 플레이어 스킬마다 추가해야됨.
 

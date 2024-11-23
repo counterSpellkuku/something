@@ -14,6 +14,10 @@ class Cooldown {
         isIn = true;
     }
 
+    public float timeLeft() {
+        return startTime.AddSeconds(time).Second - DateTime.Now.Second;
+    }
+
     public bool IsIn() {
         if (isIn) {
             if (startTime.AddSeconds(time) < DateTime.Now) {
