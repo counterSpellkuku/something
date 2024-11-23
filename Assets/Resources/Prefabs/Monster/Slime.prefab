@@ -184,12 +184,14 @@ MonoBehaviour:
   acceleration: 50
   deceleration: 50
   currentVelocity: {x: 0, y: 0}
+  shadowAnim: {fileID: 0}
   player: {fileID: 0}
   inSkill: 0
   atkCool: 0
   stopMove: 0
-  baseDamage: 5
+  baseDamage: 10
   state: 0
+  shadowOffset: {x: -0.097, y: -0.21, z: 0}
   facing: -1
 --- !u!95 &7865133945727310637
 Animator:

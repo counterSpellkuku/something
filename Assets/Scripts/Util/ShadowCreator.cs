@@ -11,6 +11,11 @@ public class ShadowCreator {
         Animator animator = obj.AddComponent<Animator>();
         SpriteRenderer render = obj.AddComponent<SpriteRenderer>();
 
+        render.sortingLayerName = entity.render.sortingLayerName;
+
+        entity.render.sortingOrder = 1;
+        render.sortingOrder = 0;
+
         obj.transform.SetParent(entity.transform);
 
         render.sprite = entity.render.sprite;
