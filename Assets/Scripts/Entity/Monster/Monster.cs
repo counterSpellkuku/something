@@ -65,6 +65,7 @@ namespace Entity.Monster {
         public override void Dead()
         {
             isDeath = true;
+            animator.SetBool("isDeath", isDeath);
             Destroy(gameObject, 1);
         }
 
