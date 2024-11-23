@@ -21,13 +21,20 @@ namespace Hunger_of_war.Util {
         #region Private Variables
         SpriteRenderer render;
         BoxCollider2D col;
+        Vector2 mouse;
+        float angle;
+        Transform rot;
         #endregion
 
         #region Static Methods
         public static DamageArea Init(Transform parent, DamageAreaShape shape, float width, float length) {
             GameObject obj = new GameObject("DamageArea");
+            GameObject rot = new GameObject("rot");
 
-            obj.transform.SetParent(parent);
+            rot.transform.SetParent(parent);
+            rot.transform.localPosition = Vector3.zero;
+
+            obj.transform.SetParent(rot.transform);
             obj.transform.localPosition = Vector3.zero;
 
             var render = obj.AddComponent<SpriteRenderer>();
@@ -36,12 +43,16 @@ namespace Hunger_of_war.Util {
             da.width = width;
             da.length = length;
 
+            da.rot = rot.transform;
+
             if (shape == DamageAreaShape.Square) {
                 render.sprite = Resources.Load<Sprite>("Texture2D/DamageArea");
 
                 var col = obj.AddComponent<BoxCollider2D>();
                 col.isTrigger = true;   
                 col.size = Vector2.one;
+            } else if (shape == DamageAreaShape.FanShaped) {
+                //여기 해주세여 ㅎㅎ
             }
 
             render.sortingLayerName = "damageArea";
@@ -65,6 +76,10 @@ namespace Hunger_of_war.Util {
                 transform.localPosition = new Vector3(0, length / 2) + offset;
 
                 @color.a = 0.3f;
+
+                mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                angle = Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg;
+                rot.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
             } else {
                 @color.a = 0f;
             }

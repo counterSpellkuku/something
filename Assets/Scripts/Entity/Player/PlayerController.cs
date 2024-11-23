@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Manager;
 using System.PlayerSave;
+using System.Weapon;
 using UnityEngine;
 
 namespace Entity.Player {
@@ -11,6 +12,7 @@ namespace Entity.Player {
         protected override Color damageColor => Color.red;
         public int facing;
         public bool isMoving;
+        public Weapon heldWeapon;
         [SerializeField]
         Animator shadowAnim;
 
@@ -39,6 +41,21 @@ namespace Entity.Player {
                 moveInput = moveInput.normalized;
             } else {
                 isMoving = false;
+            }
+
+            if (heldWeapon != null) {
+                if (Input.GetMouseButtonDown(0)) {
+                    heldWeapon.OnMouseLeftDown();
+                }
+                if (Input.GetMouseButtonUp(0)) {
+                    heldWeapon.OnMouseLeftkUp();
+                }
+                if (Input.GetMouseButtonDown(1)) {
+                    heldWeapon.OnMouseRightDown();
+                }
+                if (Input.GetMouseButtonUp(1)) {
+                    heldWeapon.OnMouseRightkUp();
+                }
             }
 
             // 플레이어 스킬마다 추가해야됨.
