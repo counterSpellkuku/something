@@ -23,9 +23,8 @@ namespace Entity.Player {
         public float baseDamage;
         public bool isMoving;
         public Weapon heldWeapon;
-        public int faceY;
+        int faceY;
         bool toRight;
-        public Vector3 mouse;
 
         public EarthquakeSkill earth;
         public FireballSkill fire;
@@ -112,7 +111,6 @@ namespace Entity.Player {
                 stopMove -= Time.deltaTime;
             
             Animate();
-            mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
 
@@ -147,25 +145,7 @@ namespace Entity.Player {
         }
 
         public void DirectionToMouse() {
-            DirectionTo(mouse - transform.position);
-        }
-        public Vector2 GetMouseDirection() {
-            Vector2 vec = new Vector2();
-            Vector2 deltaPos = mouse - transform.position;
-
-            if (deltaPos.x > 0) {
-                vec.x = 1;
-            } else if (deltaPos.x < 0) {
-                vec.x = -1;
-            }
-
-            if (deltaPos.y > 0) {
-                vec.y = 1;
-            } else if (deltaPos.y < 0) {
-                vec.y = -1;
-            }
-
-            return vec;
+            //DirectionTo()
         }
 
         public void DirectionTo(Vector3 pos) {

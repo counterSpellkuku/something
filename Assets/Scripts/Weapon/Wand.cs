@@ -9,7 +9,7 @@ namespace System.Weapon {
     public class Wand : Weapon
     {
         Cooldown atkCool = new(1.5f);
-        Cooldown rightCool = new(4);
+        Cooldown rightCool = new(5);
         DamageArea rightArea;
         DamageArea leftArea;
         [SerializeField]
@@ -53,11 +53,11 @@ namespace System.Weapon {
 
             // pj.transform.rotation = leftArea.rot.rotation;
             
-            Vector3 dir = ((Vector3) RecordSystem.Instance.GetMousePosition() - this.transform.position).normalized;
+            Vector3 dir = (RecordSystem.Instance.GetMousePosition() - this.transform.position).normalized;
             
 
             attatcher.DirectionToMouse();
-            pj.rb.AddForce(dir * 25, ForceMode2D.Impulse);
+            pj.rb.AddForce(dir * 8, ForceMode2D.Impulse);
             pj.OnHit = OnHitDefBullet;
         }
 
@@ -91,12 +91,29 @@ namespace System.Weapon {
             animator.SetTrigger("attack1");
             attatcher.animator.SetTrigger("attack1");
 
-            attatcher.stopMove = 0.3f;
+            attatcher.stopMove = 0.5f;
             attatcher.Stop();
 
-            foreach (BaseEntity target in rightArea.casted) {
-                target.GetDamage(attatcher.baseDamage * 1.5f);
-                target.KnockBack(transform.position, 12, 0.2f);
+            Projectile pj = Instantiate(wandBullet, transform.position, Quaternion.identity);
+            pj.LifeTime = 10;
+            pj.transform.localScale = pj.transform.localScale * 2;
+
+            // pj.transform.rotation = leftArea.rot.rotation;
+            
+            Vector3 dir = (RecordSystem.Instance.GetMousePosition() - this.transform.position).normalized;
+            
+
+            attatcher.DirectionToMouse();
+            pj.rb.AddForce(dir * 15, ForceMode2D.Impulse);
+            pj.OnHit = OnHitSkBullet;
+        }
+
+        void OnHitSkBullet(Transform target, Projectile pj) {
+            Monster entity = target.GetComponent<Monster>();
+
+            if (entity != null) {
+                entity.GetDamage(attatcher.baseDamage * 0.7f, attatcher);
+                entity.KnockBack(target.position, 6, 0.3f);
             }
         }
     }
