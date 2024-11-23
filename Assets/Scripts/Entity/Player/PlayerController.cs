@@ -48,7 +48,13 @@ namespace Entity.Player {
             
         }
 
-        private void FixedUpdate() {
+        protected override void OnHurt(float damage, BaseEntity attacker, ref bool cancel)
+        {
+            CamManager.main.Shake(0.5f);
+        }
+
+        private new void FixedUpdate() {
+            base.FixedUpdate();
              if (stopMove <= 0) {
                 Move(moveInput);
                 RecordSystem.Instance.Record(keys.ToArray());

@@ -1,9 +1,8 @@
-
-
 using UnityEngine;
 
 namespace Entity.Monster {
-    public class Goblin : Monster {
+public class Bat : Monster
+{
         protected override void MobUpdate()
         {
 
@@ -13,11 +12,11 @@ namespace Entity.Monster {
                 }
             }
 
+
             else if (state == MonsterState.Chase) {
-                if (Dist(player.transform) <= 2f) {
+                if (Dist(player.transform) <= 1.3f) {
                     Attack();
                 } else {
-                    
                     Chase(player.transform);
                 }
             }
@@ -29,16 +28,9 @@ namespace Entity.Monster {
             }
 
             player.GetDamage(baseDamage, this);
-            player.KnockBack(transform.position, 5, 0.1f);
 
-            atkCool = 0.3f;
-            
-
-            if (Random.Range(0, 100) < 50) {
-                stopMove = 0.1f;
-
-                Stop();
-            }
+            atkCool = 0.5f;
+            stopMove = 0.2f;
         }
     }
 }

@@ -38,7 +38,6 @@ namespace Entity
             // 넉백 타이머 처리
             if (onknockBack) {
                 knockBackDuration -= Time.fixedDeltaTime;
-            
                 if (knockBackDuration <= 0) {
                     onknockBack = false;
                     rigid.linearVelocity = Vector2.zero; // 넉백 종료 시 속도 초기화
@@ -78,6 +77,10 @@ namespace Entity
         
 
         protected void Move(Vector2 moveInput) {
+            if (onknockBack) {
+                return;
+            }
+            
             Vector2 targetVelocity = moveInput * speed;
             
             if (moveInput != Vector2.zero)
@@ -102,12 +105,12 @@ namespace Entity
             rigid.linearVelocity = currentVelocity;
         }
 
-        protected void Stop() {
+        public void Stop() {
             currentVelocity = Vector2.zero;
             rigid.linearVelocity = currentVelocity;
         }
         
-        protected void KnockBack(Vector3 position, float force, float duration) {
+        public void KnockBack(Vector3 position, float force, float duration) {
             onknockBack = true;
             knockBackDuration = duration;
             Vector3 direction = (transform.position - position).normalized;            
