@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: WaveData
+  m_Name: Sixth
   m_EditorClassIdentifier: Assembly-CSharp:System.Wave:WaveData
-  Name: First
+  Name: 
   monsters:
-    _keyValueList:
-    - Key: {fileID: 724181041804239882, guid: e98d8d1a87c3c9443a439de43bc4e241, type: 3}
-      Value: 3
+    _keyValueList: []
