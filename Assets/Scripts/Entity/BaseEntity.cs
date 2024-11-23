@@ -25,6 +25,9 @@ namespace Entity
         [SerializeField] protected Vector2 currentVelocity;
         [SerializeField]
         public Animator shadowAnim;
+        [HideInInspector]
+        public float critPer, critPower;
+        public float critPerDef = 3, critPowerDef = 2;
 
         protected virtual Color damageColor => Color.white;
 
@@ -38,6 +41,9 @@ namespace Entity
             render = GetComponent<SpriteRenderer>();
             onknockBack = false;
             knockBackDuration = 0;
+
+            critPer = critPerDef;
+            critPower = critPowerDef;
         }
         
         protected virtual void FixedUpdate() {
@@ -54,12 +60,18 @@ namespace Entity
 
         public virtual bool GetDamage(float damage, BaseEntity attacker = null) {
             // 특수 상황인 경우 override
-            bool cancel = false;
+            bool cancel = false, isCrit = false;
+
+            if (UnityEngine.Random.Range(0, 100) < critPer) {
+                damage *= critPower;
+
+                isCrit = true;
+            }
             OnHurt(damage, attacker, ref cancel);
 
             if (cancel) return false;
 
-            DamageIndicator.Show(transform.position + new Vector3(UnityEngine.Random.Range(-0.5f, 0.5f), UnityEngine.Random.Range(-0.2f, 0.2f) + 0.5f), damage, damageColor);
+            DamageIndicator.Show(transform.position + new Vector3(UnityEngine.Random.Range(-0.5f, 0.5f), UnityEngine.Random.Range(-0.2f, 0.2f) + 0.5f), damage, damageColor, isCrit);
             
             currentHp -= damage;
             if (currentHp <= 0f)
