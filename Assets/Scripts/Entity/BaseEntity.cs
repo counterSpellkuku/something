@@ -28,7 +28,7 @@ namespace Entity
         [HideInInspector]
         public float critPer, critPower;
         public float critPerDef = 3, critPowerDef = 2;
-
+        public float stopMove;
         protected virtual Color damageColor => Color.white;
 
         private bool onknockBack;
@@ -122,7 +122,7 @@ namespace Entity
             }
 
             currentVelocity = Vector2.ClampMagnitude(currentVelocity, maxSpeed);
-            
+            if(name != "Player")Debug.Log(moveInput);
             rigid.linearVelocity = currentVelocity;
         }
 

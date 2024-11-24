@@ -84,7 +84,7 @@ namespace Skills.Iceage
         {
             if (((1 << collision.gameObject.layer) & damageableLayer) != 0)
             {
-                var targetEntity = collision.GetComponent<Monster>();
+                var targetEntity = collision.GetComponent<BaseEntity>();
                 if (alreadyDamaged.Contains(targetEntity.gameObject)) return;
                 if (targetEntity != null)
                 {

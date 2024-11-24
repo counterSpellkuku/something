@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Manager;
 using System.PlayerSave;
+using System.Wave;
 using System.Weapon;
 using Skills.Earthquake;
 using Skills.Fireball;
@@ -17,7 +18,7 @@ namespace Entity.Player {
     [RequireComponent(typeof(MissileSkill))]
     public class PlayerController : BaseEntity {
         private Vector2 moveInput;
-        public float inSkill, atkCool, preventInput, stopMove;
+        public float inSkill, atkCool, preventInput;
         protected override Color damageColor => Color.red;
         public int facing;
         public float baseDamage;
@@ -31,7 +32,7 @@ namespace Entity.Player {
         public IceageSkill ice;
         public MissileSkill missile;
 
-        
+        public DeadCanva canva;
         private HashSet<KeyCode> keys;
         
         private void Start() {
@@ -198,6 +199,7 @@ namespace Entity.Player {
             }
         }
 
+        public override void Dead() { canva.ShowGameOver(); }
         public void OnDestroy()
         {
         }
