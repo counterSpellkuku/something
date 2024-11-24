@@ -189,13 +189,13 @@ MonoBehaviour:
   critPower: 0
   critPerDef: 3
   critPowerDef: 2
+  isDeath: 0
   player: {fileID: 0}
   inSkill: 0
   atkCool: 0
   stopMove: 0
-  baseDamage: 8
+  baseDamage: 6
   state: 0
-  isDeath: 0
   shadowOffset: {x: 0, y: -0.441, z: 0}
   facing: 1
 --- !u!95 &3665296581310744890

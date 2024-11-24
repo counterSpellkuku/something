@@ -1,3 +1,4 @@
+using System.Manager;
 using Entity.Player;
 using UnityEngine;
 
@@ -49,10 +50,19 @@ namespace System.Weapon {
             }
         }
         public void Attatch(PlayerController player) {
+            if (player.heldWeapon != null) {
+                return;
+            }
+            
             transform.SetParent(player.transform);
 
             attatcher = player;
             player.heldWeapon = this;
+
+            if (UIManager.Instance != null) {
+                UIManager.Instance.weaponBack.sprite = UIManager.Instance.weaponImg.sprite = render.sprite;
+                UIManager.Instance.weaponBack.gameObject.SetActive(true);
+            }
 
             transform.localPosition = Vector2.zero;
         }

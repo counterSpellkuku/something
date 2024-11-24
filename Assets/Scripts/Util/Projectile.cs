@@ -14,7 +14,7 @@ public class Projectile : MonoBehaviour
     Collider2D[] results;
     bool hitted;
     public float LifeTime;
-    float time;
+    public float time;
     
     void Awake()
     {

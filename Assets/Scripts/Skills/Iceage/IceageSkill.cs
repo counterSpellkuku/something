@@ -1,3 +1,4 @@
+using System.Manager;
 using Skills.Iceage;
 using UnityEngine;
 
@@ -9,16 +10,21 @@ public class IceageSkill : BaseSkill
     [SerializeField] private GameObject iceagePrefab;
     [SerializeField] private int damage;
 
-    private Cooldown skillCool;
-
     private void Awake()
     {
         skillCool = new Cooldown(cooldown);
     }
+
+    void Update() {
+        if (skillCool.IsIn()) {
+            UIManager.Instance.skill3Col.fillAmount = skillCool.timeLeft() / skillCool.time;
+        } else {
+            UIManager.Instance.skill3Col.fillAmount = 0;
+        }
+    }
         
     public override bool ActivateToVector3(GameObject user, Vector3 target)
     {
-        skillCool.Start();
         return base.ActivateToVector3(user, target);
     }
         

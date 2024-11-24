@@ -1,4 +1,5 @@
 
+using System.Manager;
 using Entity;
 using UnityEngine;
 
@@ -15,12 +16,18 @@ namespace Skills.Missile
         [SerializeField] private GameObject missilePrefab;
         [SerializeField] private int damage;
         
-        
-        private Cooldown skillCool;
 
         private void Awake()
         {
             skillCool = new Cooldown(cooldown);
+        }
+
+        void Update() {
+            if (skillCool.IsIn()) {
+                UIManager.Instance.skill4Col.fillAmount = skillCool.timeLeft() / skillCool.time;
+            } else {
+                UIManager.Instance.skill4Col.fillAmount = 0;
+            }
         }
         
         public override bool ActivateToObject(GameObject user, GameObject target)

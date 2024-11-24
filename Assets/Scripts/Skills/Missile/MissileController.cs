@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Manager;
 using Entity;
 using UnityEngine;
 
@@ -37,6 +38,8 @@ namespace Skills.Missile
                 float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0, 0, targetAngle);
             }
+
+            CamManager.main.Shake(0.3f, 0.5f);
         }
 
         private void Update()

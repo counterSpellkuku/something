@@ -71,7 +71,6 @@ public class FireballController : MonoBehaviour
 
         // 타겟에 충돌 처리
         foreach (Transform target in projectile.targets) {
-            
             if (alreadyDamaged.Contains(target.gameObject)) continue;
             var entity = target.GetComponent<BaseEntity>();
             if (entity != null)

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Manager;
 using Entity;
 using UnityEngine;
 
@@ -32,6 +33,8 @@ namespace Skills.Earthquake
             }
 
             alreadyDamaged = new HashSet<GameObject>();
+
+            CamManager.main.Shake(4, 0.2f);
         }
         
         public void Init(float damage)

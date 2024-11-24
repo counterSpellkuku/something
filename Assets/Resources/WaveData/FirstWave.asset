@@ -17,3 +17,5 @@ MonoBehaviour:
     _keyValueList:
     - Key: {fileID: 2245849266010215877, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
       Value: 1
+    - Key: {fileID: 1365445719707284315, guid: c7dc656b9f1326a4cb6eadc37e74b8de, type: 3}
+      Value: 2

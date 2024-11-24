@@ -16,6 +16,8 @@ MonoBehaviour:
   monsters:
     _keyValueList:
     - Key: {fileID: 724181041804239882, guid: e98d8d1a87c3c9443a439de43bc4e241, type: 3}
-      Value: 12
+      Value: 6
     - Key: {fileID: 2245849266010215877, guid: 5acf9f7f4ef2b1248bae184efa00c12f, type: 3}
       Value: 3
+    - Key: {fileID: 1365445719707284315, guid: c7dc656b9f1326a4cb6eadc37e74b8de, type: 3}
+      Value: 5
