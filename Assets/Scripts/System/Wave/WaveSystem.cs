@@ -62,9 +62,7 @@ namespace System.Wave
             validPosition.Add(wave.name, w);
         }
 
-        void Update() {
-            UIManager.Instance.waveInfoBack.text = UIManager.Instance.waveInfo.text = "Remaining Monsters\n(" + Monster.monsters.Count + "/" + maxMonster + ")";
-        }
+
 
 
         public void Event(WaveTrigger trigger) {
@@ -73,7 +71,7 @@ namespace System.Wave
             if (trigger.data.monsters.Count <= 0 && Monster.monsters.Count <= 0) {
                 trigger.complete = true;
             }
-
+            UIManager.Instance.waveInfoBack.text = UIManager.Instance.waveInfo.text = "Remaining Monsters\n(" + Monster.monsters.Count + "/" + maxMonster + ")";
             if (colliders[colliders.IndexOf(trigger)].complete)
             {
                 int idx = colliders.IndexOf(trigger);
@@ -89,15 +87,17 @@ namespace System.Wave
                         
             trigger.DelaySetup();
             List<Vector2> list = validPosition[trigger.name];
-            Vector2 position = list[Mathf.FloorToInt(UnityEngine.Random.Range(0f, list.Count - 1))];
+            Vector2 position = list[Mathf.FloorToInt(UnityEngine.Random.Range(0f, list.Count))];
 
             if (trigger.data.monsters.Count <= 0) return;
             KeyValuePair<GameObject, int> kv = new KeyValuePair<GameObject, int>();
-            
-            
+
+            int maxOfCount = 0;
             foreach (KeyValuePair<GameObject, int> entry in trigger.data.monsters) {
                 if (UnityEngine.Random.Range(0, 1) == 0 && entry.Key != null) kv = entry;
                 if (kv.Key == null) kv = entry;
+                
+                
             }
             // Debug.Log("출발");
 
@@ -105,10 +105,11 @@ namespace System.Wave
             Monster monster = obj.GetComponent<Monster>();
             monster.baseDamage += 5 * colliders.IndexOf(trigger);
             monster.SetHP(5 * colliders.IndexOf(trigger), 5 * colliders.IndexOf(trigger));
+            maxMonster = Monster.monsters.Count;
 
+            UIManager.Instance.waveInfoBack.text = UIManager.Instance.waveInfo.text = "Remaining Monsters\n(" + Monster.monsters.Count + "/" + trigger.maxMonster + ")";
             int currentCount = kv.Value;
 
-            maxMonster = Monster.monsters.Count;
 
             if (currentCount - 1 <= 0) trigger.data.monsters.Remove(kv.Key);
             else trigger.data.monsters[kv.Key] = currentCount - 1;

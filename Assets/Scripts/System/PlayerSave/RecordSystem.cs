@@ -185,6 +185,7 @@ namespace System.PlayerSave
         // Singleton 해제
         public void OnDestroy()
         {
+            FileManager.SaveDataLinear("PlayerShadow", GetRecordedStates().ToArray());
             // FileManager.SaveData("PlayerShadow", GetRecordedStates().ToArray());
             FileManager.SaveEnd();
             RecordSystem.Instance = null;

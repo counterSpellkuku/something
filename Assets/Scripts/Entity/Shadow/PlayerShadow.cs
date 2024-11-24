@@ -62,7 +62,8 @@ namespace Entity.Shadow
                 dir += GetDirection(code);
                 CheckSkill(code);
             }
-            
+
+            isMoving = (dir != Vector2.zero);
             Animate(dir.normalized);
             
             // 스킬 체크 로직 추가
@@ -72,31 +73,33 @@ namespace Entity.Shadow
 
         }
 
-        private void Animate(Vector2 direction) {
-            animator.SetBool("isMoving", isMoving);
 
-            if (isMoving) {
-                ApplyDirection(direction);
-            }
 
-            if (facing == 1) {
-                render.flipX = false;
-            } else if (facing == -1) {
-                render.flipX = true;
-            }
+    private void Animate(Vector2 direction) {
+        animator.SetBool("isMoving", isMoving);
 
-            if (heldWeapon != null) {
-                heldWeapon.animator.SetBool("isMoving", isMoving);
-                
-                heldWeapon.animator.SetInteger("faceY", animator.GetInteger("faceY"));
-
-                heldWeapon.animator.SetBool("toRight", animator.GetBool("toRight"));
-
-                heldWeapon.render.flipX = render.flipX;
-            }
+        if (isMoving) {
+            ApplyDirection(direction);
         }
 
-        public void ApplyDirection(Vector2 direction) {
+        if (facing == 1) {
+            render.flipX = false;
+        } else if (facing == -1) {
+            render.flipX = true;
+        }
+
+        if (heldWeapon != null) {
+            heldWeapon.animator.SetBool("isMoving", isMoving);
+                
+            heldWeapon.animator.SetInteger("faceY", animator.GetInteger("faceY"));
+
+            heldWeapon.animator.SetBool("toRight", animator.GetBool("toRight"));
+
+            heldWeapon.render.flipX = render.flipX;
+        }
+    }
+
+    public void ApplyDirection(Vector2 direction) {
             if (direction.y > 0) {
                 faceY = 1;
             } else if (direction.y < 0) {

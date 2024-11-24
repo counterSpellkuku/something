@@ -16,7 +16,7 @@ namespace Entity.Monster {
         protected PlayerController player;
         public bool playerFound => player != null;
 
-        public float inSkill, atkCool, stopMove;
+        public float inSkill, atkCool;
         public int baseDamage;
 
         public MonsterState state;
