@@ -16,7 +16,7 @@ namespace System.Weapon {
         public override string Id => "shield";
 
         void Start() {
-            leftArea = DamageArea.Init(transform, DamageAreaShape.Square, 1.5f, 0.5f);
+            leftArea = DamageArea.Init(transform, DamageAreaShape.Square, 1.5f, 1f);
         }
         public override void OnAttatch()
         {
@@ -31,7 +31,7 @@ namespace System.Weapon {
             if (isShielding) {
                 attatcher.isMoving = true;
                 attatcher.DirectionToMouse();
-                
+
                 attatcher.stopMove = 0.2f;
 
                 shieldTime += Time.deltaTime;
@@ -86,7 +86,7 @@ namespace System.Weapon {
 
             CamManager.main.CloseUp(4f, 4 * attatcher.facing, 0.2f);
 
-            CamManager.main.Shake(8, 0.3f);
+            CamManager.main.Shake(4, 0.3f);
 
             attatcher.stopMove = 0.5f;
 
