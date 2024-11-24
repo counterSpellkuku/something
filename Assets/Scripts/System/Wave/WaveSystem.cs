@@ -65,18 +65,18 @@ namespace System.Wave
 
 
         public void Event(WaveTrigger trigger) {
-
-            
             if (trigger.data.monsters.Count <= 0 && Monster.monsters.Count <= 0) {
                 trigger.complete = true;
             }
-            UIManager.Instance.waveInfoBack.text = UIManager.Instance.waveInfo.text = "Remaining Monsters\n(" + Monster.monsters.Count + "/" + maxMonster + ")";
+            if (UIManager.Instance != null) {
+                UIManager.Instance.waveInfoBack.text = UIManager.Instance.waveInfo.text = "Remaining Monsters\n(" + Monster.monsters.Count + "/" + maxMonster + ")";
+            }
             if (colliders[colliders.IndexOf(trigger)].complete)
             {
                 int idx = colliders.IndexOf(trigger);
 
                 if (idx + 1 >= colliders.Count) return;
-                colliders[idx + 1].renderer.enabled = false;
+                colliders[idx + 1].render.enabled = false;
                 colliders[idx + 1].GetComponent<Collider2D>().isTrigger = true;
             }
             
@@ -91,7 +91,7 @@ namespace System.Wave
             if (trigger.data.monsters.Count <= 0) return;
             KeyValuePair<GameObject, int> kv = new KeyValuePair<GameObject, int>();
 
-            int maxOfCount = 0;
+            //int maxOfCount = 0;
             foreach (KeyValuePair<GameObject, int> entry in trigger.data.monsters) {
                 if (UnityEngine.Random.Range(0, 1) == 0 && entry.Key != null) kv = entry;
                 if (kv.Key == null) kv = entry;

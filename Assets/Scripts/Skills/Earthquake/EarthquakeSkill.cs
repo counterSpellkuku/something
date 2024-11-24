@@ -12,6 +12,7 @@ namespace Skills.Earthquake
         [SerializeField] private float damage = 10f; // 스킬 데미지
 
         void Update() {
+            if (UIManager.Instance == null) return;
             if (skillCool.IsIn()) {
                 UIManager.Instance.skill1Col.fillAmount = skillCool.timeLeft() / skillCool.time;
             } else {

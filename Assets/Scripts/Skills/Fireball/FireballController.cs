@@ -37,6 +37,8 @@ public class FireballController : MonoBehaviour
         initialDirection = direction;
         this.damage = damage;
 
+        SoundManager.Instance.Play("fireball");
+
         // Fireball의 방향을 조정
         RotateTowardsDirection(direction);
 

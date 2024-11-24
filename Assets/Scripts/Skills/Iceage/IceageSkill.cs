@@ -16,6 +16,7 @@ public class IceageSkill : BaseSkill
     }
 
     void Update() {
+        if (UIManager.Instance == null) return;
         if (skillCool.IsIn()) {
             UIManager.Instance.skill3Col.fillAmount = skillCool.timeLeft() / skillCool.time;
         } else {

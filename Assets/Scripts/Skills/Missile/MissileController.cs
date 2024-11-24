@@ -40,6 +40,8 @@ namespace Skills.Missile
             }
 
             CamManager.main.Shake(0.3f, 0.5f);
+
+            SoundManager.Instance.Play("misile");
         }
 
         private void Update()

@@ -23,6 +23,7 @@ namespace Skills.Missile
         }
 
         void Update() {
+            if (UIManager.Instance == null) return;
             if (skillCool.IsIn()) {
                 UIManager.Instance.skill4Col.fillAmount = skillCool.timeLeft() / skillCool.time;
             } else {

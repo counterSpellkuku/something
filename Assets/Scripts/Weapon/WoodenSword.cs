@@ -48,6 +48,8 @@ namespace System.Weapon {
             animator.SetTrigger("attack1");
             attatcher.animator.SetTrigger("attack1");
 
+            SoundManager.Instance.Play("wood_attack");
+
             foreach (BaseEntity target in leftArea.casted) {
                 target.GetDamage(attatcher.baseDamage * 0.6f, attatcher);
                 target.KnockBack(transform.position, 1, 0.4f);
@@ -72,6 +74,8 @@ namespace System.Weapon {
 
             animator.SetTrigger("attack_wide");
             attatcher.animator.SetTrigger("attack_wide");
+
+            SoundManager.Instance.Play("wood_attack");
 
             attatcher.stopMove = 0.3f;
             attatcher.Stop();

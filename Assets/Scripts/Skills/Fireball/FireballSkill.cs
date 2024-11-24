@@ -19,10 +19,12 @@ namespace Skills.Fireball
         }
 
         void Update() {
-            if (skillCool.IsIn()) {
-                UIManager.Instance.skill2Col.fillAmount = skillCool.timeLeft() / skillCool.time;
-            } else {
-                UIManager.Instance.skill2Col.fillAmount = 0;
+            if (UIManager.Instance != null) {
+                if (skillCool.IsIn()) {
+                    UIManager.Instance.skill2Col.fillAmount = skillCool.timeLeft() / skillCool.time;
+                } else {
+                    UIManager.Instance.skill2Col.fillAmount = 0;
+                }
             }
         }
         

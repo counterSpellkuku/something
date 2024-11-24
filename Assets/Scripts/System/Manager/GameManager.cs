@@ -46,6 +46,8 @@ namespace System.Manager {
             yield return new WaitForSeconds(1);
 
             state = GameState.Started;
+
+            SoundManager.Instance.Play("inGame");
         }
 
         void Update() {

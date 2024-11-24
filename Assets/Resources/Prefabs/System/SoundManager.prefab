@@ -436,7 +436,103 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  Sounds: []
+  Sounds:
+  - id: ui.hover
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: 83da60fa8a7d58e4ba53cdbccda04355, type: 3}
+    volume: 1
+    pitch: 1
+    startTime: 0
+    track: 0
+    loop: 0
+  - id: wood_attack
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: 93927e9d2261c614185c8817cdfbf4a0, type: 3}
+    volume: 1
+    pitch: 1
+    startTime: 0
+    track: 2
+    loop: 0
+  - id: misile
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: cb02afccd5cac244a8c2c4ecfa0195bf, type: 3}
+    volume: 1
+    pitch: 1
+    startTime: 0
+    track: 2
+    loop: 0
+  - id: slime
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: e0f71e7d681fb91499a8446560260039, type: 3}
+    volume: 1
+    pitch: 1
+    startTime: 0
+    track: 3
+    loop: 0
+  - id: itemGet
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: 4cb28b8f44b7ede4aacafb773a0c035d, type: 3}
+    volume: 1
+    pitch: 1
+    startTime: 0
+    track: 0
+    loop: 0
+  - id: fireball
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: c020737b0d6baa6479bb8cc9f5e25fcf, type: 3}
+    volume: 1
+    pitch: 1
+    startTime: 0
+    track: 2
+    loop: 0
+  - id: dash
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: 82ddb18da61acbc43a5578430d2d0a46, type: 3}
+    volume: 1
+    pitch: 1
+    startTime: 0
+    track: 1
+    loop: 0
+  - id: hit
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: 2172d3dd333ceb94fa896777499077cd, type: 3}
+    volume: 1
+    pitch: 1
+    startTime: 0
+    track: 1
+    loop: 0
+  - id: move
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: 7374e1c85e042a741bdde7c52f336f72, type: 3}
+    volume: 1
+    pitch: 1
+    startTime: 0
+    track: 1
+    loop: 0
+  - id: ending
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: c59d47a49f442422a9b8d2a77705bf70, type: 3}
+    volume: 0.8
+    pitch: 1
+    startTime: 0
+    track: 4
+    loop: 1
+  - id: inGame
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: 5b1c9317d3c774ae2923589549d17e96, type: 3}
+    volume: 0.8
+    pitch: 1
+    startTime: 0
+    track: 4
+    loop: 1
+  - id: startMenu
+    audioIn: {fileID: 0}
+    audio: {fileID: 8300000, guid: 283cfd87d046b4d63816259a63cf79b4, type: 3}
+    volume: 0.8
+    pitch: 1
+    startTime: 0
+    track: 4
+    loop: 1
   _tracks:
   - {fileID: 2005333637505729999}
   - {fileID: 2684187569957868185}

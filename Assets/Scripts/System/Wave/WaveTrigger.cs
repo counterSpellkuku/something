@@ -8,7 +8,7 @@ namespace System.Wave {
     [RequireComponent(typeof(BoxCollider2D))]
     public class WaveTrigger : MonoBehaviour {
         public BoxCollider2D boxCollider { private set;  get; }
-        public SpriteRenderer renderer;
+        public SpriteRenderer render;
         [SerializeField] public WaveData data;
         public bool isColliding { private set; get; }
 
@@ -28,18 +28,18 @@ namespace System.Wave {
                 boxCollider = gameObject.AddComponent<BoxCollider2D>();
             }
 
-            renderer = GetComponent<SpriteRenderer>();
+            render = GetComponent<SpriteRenderer>();
             boxCollider.isTrigger = true;
             complete = false;
 
             if (this.gameObject.name == "First")
             {
-                renderer.enabled = false;
+                render.enabled = false;
                 GetComponent<Collider2D>().isTrigger = true;
             }
             else {
                 Debug.Log(this.gameObject);
-                renderer.enabled = true;
+                render.enabled = true;
                 GetComponent<Collider2D>().isTrigger = false;
             }
 
@@ -81,7 +81,9 @@ namespace System.Wave {
         {
             // Debug.Log($"충돌 {state}: {collision.gameObject.name}");
             if (state == "ing" && collision.gameObject.layer == LayerMask.NameToLayer("player")) {
-                WaveSystem.Instance.Event(this);
+                if (WaveSystem.Instance != null) {
+                    WaveSystem.Instance.Event(this);
+                }
             }
 
         
@@ -100,6 +102,6 @@ namespace System.Wave {
     [CreateAssetMenu(fileName = "New Wave", menuName = "Compy/Wave Data")]
     [Serializable] public class WaveData : ScriptableObject {
         public string Name;
-        public SerializableDictionary<GameObject, int> monsters;  
+        public SerializableDictionary<GameObject, int> monsters = new();  
     }
 }

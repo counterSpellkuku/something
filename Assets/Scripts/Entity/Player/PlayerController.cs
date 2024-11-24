@@ -99,6 +99,8 @@ namespace Entity.Player {
                 if (!dashCool.IsIn()) {
                     dashCool.Start();
                     StartCoroutine(Dash());
+
+                    SoundManager.Instance.Play("dash");
                 }
             }
 
@@ -229,6 +231,7 @@ namespace Entity.Player {
 
             if (!cancel) {
                 CamManager.main.Shake(0.2f);
+                SoundManager.Instance.Play("hit");
             }
         }
 
