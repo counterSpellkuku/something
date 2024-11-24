@@ -138,15 +138,13 @@ namespace Entity.Player {
         IEnumerator Dash() {
             float sp = speed;
 
-            speed *= 5;
+            speed *= 100;
 
-            Vector2 scale = transform.localScale;
+            CamManager.main.CloseUp(5f, 0, 0f);
 
-            transform.localScale = Vector2.zero;
+            yield return new WaitForSeconds(0.5f);
 
-            yield return new WaitForSeconds(0.2f);
-
-            transform.localScale = scale;
+            CamManager.main.CloseOut(0.1f);
 
             speed = sp;
         }

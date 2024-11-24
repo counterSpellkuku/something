@@ -78,6 +78,8 @@ namespace System.Wave
             retryButton.gameObject.SetActive(true);
         if (mainMenuButton != null)
             mainMenuButton.gameObject.SetActive(true);
+
+        Time.timeScale = 0.3f;
     }
     
     public void RetryGame()
@@ -86,10 +88,14 @@ namespace System.Wave
         UnityEngine.SceneManagement.SceneManager.LoadScene(
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex
         );
+
+        Time.timeScale = 1;
     }
     
     public void GoToMainMenu()
     {
-        LoadingController.LoadScene("StartScene");    }
+        LoadingController.LoadScene("StartScene");
+        Time.timeScale = 1;
+         }
     }
 }

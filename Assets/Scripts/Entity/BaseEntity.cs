@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Reflection;
 using UnityEngine;
 
@@ -34,6 +35,7 @@ namespace Entity
         private bool onknockBack;
         private float knockBackDuration;
         public bool isDeath;
+        Material defMat, whiteMat;
         
         public void Awake() {
             rigid = GetComponent<Rigidbody2D>();
@@ -45,6 +47,9 @@ namespace Entity
 
             critPer = critPerDef;
             critPower = critPowerDef;
+
+            defMat = render.material;
+            whiteMat = Resources.Load<Material>("Material/PaintWhite");
         }
         
         protected virtual void FixedUpdate() {
@@ -73,12 +78,22 @@ namespace Entity
             if (cancel || isDeath) return false;
 
             DamageIndicator.Show(transform.position + new Vector3(UnityEngine.Random.Range(-0.5f, 0.5f), UnityEngine.Random.Range(-0.2f, 0.2f) + 0.5f), damage, damageColor, isCrit);
+
+            StartCoroutine(hurtEff());
             
             currentHp -= damage;
             if (currentHp <= 0f)
                 Dead();
 
             return true;
+        }
+
+        IEnumerator hurtEff() {
+            render.material = whiteMat;
+
+            yield return new WaitForSeconds(0.2f);
+
+            render.material = defMat;
         }
 
         protected virtual void OnHurt(float damage, BaseEntity attacker, ref bool cancel) {
