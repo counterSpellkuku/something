@@ -32,7 +32,7 @@ namespace Entity.Player {
         public IceageSkill ice;
         public MissileSkill missile;
 
-        public DeadCanva canva;
+        [SerializeField] public DeadCanva canva;
         private HashSet<KeyCode> keys;
         
         private void Start() {

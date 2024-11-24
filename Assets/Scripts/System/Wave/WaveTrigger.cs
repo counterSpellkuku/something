@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Entity.Monster;
 using UnityEngine;
 using Util;
@@ -17,7 +18,7 @@ namespace System.Wave {
 
         public bool complete;
 
-
+        public int maxMonster;
         public void Awake()
         {
             isColliding = false;
@@ -42,6 +43,13 @@ namespace System.Wave {
                 GetComponent<Collider2D>().isTrigger = false;
             }
 
+            maxMonster = 0;
+            foreach (KeyValuePair<GameObject, int> entry in data.monsters)
+            {
+                maxMonster += entry.Value;
+
+
+            }
         }
 
         protected void Start() {

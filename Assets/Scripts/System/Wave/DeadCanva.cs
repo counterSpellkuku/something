@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 namespace System.Wave
@@ -10,7 +11,7 @@ namespace System.Wave
 
         
         [Header("UI References")]
-    [SerializeField] private CanvasGroup gameOverPanel;
+    [SerializeField] private Image gameOverPanel;
     [SerializeField] private TextMeshProUGUI gameOverText;
     [SerializeField] private Button retryButton;
     [SerializeField] private Button mainMenuButton;
@@ -24,7 +25,10 @@ namespace System.Wave
     {
         if (gameOverPanel != null)
         {
-            gameOverPanel.alpha = 0f;
+            Color color = gameOverPanel.color;
+            color.a = 0;
+            gameOverPanel.color = color;
+            
             gameOverPanel.gameObject.SetActive(false);
         }
         
@@ -46,7 +50,10 @@ namespace System.Wave
         while (elapsedTime < fadeInDuration)
         {
             elapsedTime += Time.deltaTime;
-            gameOverPanel.alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeInDuration);
+            Color color = gameOverPanel.color;
+            color.a = Mathf.Lerp(0f, 1f, elapsedTime / fadeInDuration);
+            gameOverPanel.color = color;
+
             yield return null;
         }
         
