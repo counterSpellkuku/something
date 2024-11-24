@@ -9,7 +9,7 @@ namespace System.Wave {
     public class WaveTrigger : MonoBehaviour {
         public BoxCollider2D boxCollider { private set;  get; }
         public SpriteRenderer renderer;
-        [SerializeField] public WaveData data;
+        public WaveData data;
         public bool isColliding { private set; get; }
 
 
@@ -21,6 +21,7 @@ namespace System.Wave {
         public int maxMonster;
         public void Awake()
         {
+            data = GetComponent<WaveData>();
             isColliding = false;
             boxCollider = GetComponent<BoxCollider2D>();
             
@@ -97,9 +98,5 @@ namespace System.Wave {
     }
 
     
-    [CreateAssetMenu(fileName = "New Wave", menuName = "Compy/Wave Data")]
-    [Serializable] public class WaveData : ScriptableObject {
-        public string Name;
-        public SerializableDictionary<GameObject, int> monsters;  
-    }
+   
 }
