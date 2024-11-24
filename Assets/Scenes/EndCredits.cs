@@ -24,7 +24,7 @@ public class EndCredits : MonoBehaviour
             contentTransform.anchoredPosition = Vector2.Lerp(startPos, endPos, t); // 선형 보간
         }
         
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(KeyCode.Escape)||Input.GetKeyDown(KeyCode.Return))
         {
             LoadingController.LoadScene("StartScene");
         }
