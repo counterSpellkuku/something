@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Manager;
@@ -7,7 +8,6 @@ using System.Weapon;
 using Skills.Earthquake;
 using Skills.Fireball;
 using Skills.Missile;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Entity.Player {
@@ -34,6 +34,8 @@ namespace Entity.Player {
 
         [SerializeField] public DeadCanva canva;
         private HashSet<KeyCode> keys;
+
+        Cooldown dashCool = new(1);
         
         private void Start() {
             rigid = GetComponent<Rigidbody2D>();
@@ -93,6 +95,13 @@ namespace Entity.Player {
                 UIManager.Instance.hpTextBack.text = UIManager.Instance.hpText.text = ((int)currentHp).ToString() + "/" + ((int)maxHp).ToString();
             }
 
+            if (Input.GetKeyDown(KeyCode.LeftShift)) {
+                if (!dashCool.IsIn()) {
+                    dashCool.Start();
+                    StartCoroutine(Dash());
+                }
+            }
+
             
             // 플레이어 스킬마다 추가해야됨.
 
@@ -124,6 +133,18 @@ namespace Entity.Player {
             Animate();
         }
 
+        IEnumerator Dash() {
+            KnockBack((Vector2)transform.position - moveInput, 8, 0.2f);
+
+            Vector2 scale = transform.localScale;
+
+            transform.localScale = Vector2.zero;
+
+            yield return new WaitForSeconds(0.2f);
+
+            transform.localScale = scale;
+        }
+
 
         public Transform GetNearTarget() {
             Vector3 pos = RecordSystem.Instance.GetMousePosition();
@@ -152,6 +173,11 @@ namespace Entity.Player {
                 heldWeapon.animator.SetBool("toRight", animator.GetBool("toRight"));
 
                 heldWeapon.render.flipX = render.flipX;
+
+                if (Input.GetKeyDown(KeyCode.Q)) {
+                    Destroy(heldWeapon.gameObject);
+                    heldWeapon = null;
+                }
             }
         }
 
