@@ -196,7 +196,13 @@ namespace Entity.Player {
 
         protected override void OnHurt(float damage, BaseEntity attacker, ref bool cancel)
         {
-            CamManager.main.Shake(0.2f);
+            if (heldWeapon != null) {
+                heldWeapon.OnHurt(damage, attacker, ref cancel);
+            }
+
+            if (!cancel) {
+                CamManager.main.Shake(0.2f);
+            }
         }
 
         private new void FixedUpdate() {

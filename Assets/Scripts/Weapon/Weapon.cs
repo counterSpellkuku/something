@@ -1,4 +1,5 @@
 using System.Manager;
+using Entity;
 using Entity.Player;
 using UnityEngine;
 
@@ -53,7 +54,7 @@ namespace System.Weapon {
             if (player.heldWeapon != null) {
                 return;
             }
-            
+
             transform.SetParent(player.transform);
 
             attatcher = player;
@@ -73,5 +74,6 @@ namespace System.Weapon {
         public abstract void OnMouseRightkUp();
 
         public virtual void OnUpdateTick(){}
+        public virtual void OnHurt(float damage, BaseEntity attacker, ref bool cancel){}
     }
 }

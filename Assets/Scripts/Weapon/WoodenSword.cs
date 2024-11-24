@@ -6,7 +6,7 @@ using UnityEngine;
 namespace System.Weapon {
     public class WoodenSword : Weapon
     {
-        Cooldown atkCool = new(1);
+        Cooldown atkCool = new(0.5f);
         Cooldown rightCool = new(4);
         DamageArea rightArea;
         DamageArea leftArea;
