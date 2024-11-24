@@ -35,13 +35,12 @@ namespace Entity.Shadow
         public new void Awake() {
             base.Awake();
             states = FileManager.GetShadow();
+            if(states == null) Destroy(this.gameObject);
         }
 
-        public void Start()
-        {
+        public void Start() {
             currentState = states[0];
             idx = 0;
-
             earth = GetComponent<EarthquakeSkill>();
             fire = GetComponent<FireballSkill>();
             ice = GetComponent<IceageSkill>();
