@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Manager;
-using Entity;
 using Entity.Monster;
 using UnityEngine;
 using UnityEngine.Tilemaps;
