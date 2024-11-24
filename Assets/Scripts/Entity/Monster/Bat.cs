@@ -29,6 +29,8 @@ public class Bat : Monster
 
             player.GetDamage(baseDamage, this);
 
+            GetHeal(2);
+
             atkCool = 0.5f;
             stopMove = 0.2f;
         }

@@ -50,6 +50,10 @@ namespace System.Weapon {
             }
         }
         public void Attatch(PlayerController player) {
+            if (player.heldWeapon != null) {
+                return;
+            }
+            
             transform.SetParent(player.transform);
 
             attatcher = player;

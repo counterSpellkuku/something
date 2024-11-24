@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Manager;
 using Entity;
 using Entity.Monster;
 using UnityEngine;
@@ -12,6 +13,8 @@ namespace System.Wave
         public static WaveSystem Instance;
         [SerializeField] public List<WaveTrigger> colliders;
         [SerializeField] public SerializableDictionary<string, List<Vector2>> validPosition;
+
+        int maxMonster;
         
         public Tilemap groundTilemap;
         public LayerMask layer;
@@ -59,7 +62,9 @@ namespace System.Wave
             validPosition.Add(wave.name, w);
         }
 
-        
+        void Update() {
+            UIManager.Instance.waveInfoBack.text = UIManager.Instance.waveInfo.text = "Remaining Monsters\n(" + Monster.monsters.Count + "/" + maxMonster + ")";
+        }
 
 
         public void Event(WaveTrigger trigger) {
@@ -102,6 +107,8 @@ namespace System.Wave
             monster.SetHP(5 * colliders.IndexOf(trigger), 5 * colliders.IndexOf(trigger));
 
             int currentCount = kv.Value;
+
+            maxMonster = Monster.monsters.Count;
 
             if (currentCount - 1 <= 0) trigger.data.monsters.Remove(kv.Key);
             else trigger.data.monsters[kv.Key] = currentCount - 1;

@@ -32,6 +32,8 @@ namespace Entity.Monster {
             player.KnockBack(transform.position, 5, 0.1f);
 
             atkCool = 0.3f;
+
+            animator.SetTrigger("attack");
             
 
             if (Random.Range(0, 100) < 50) {
