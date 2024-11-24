@@ -23,5 +23,10 @@ public class EndCredits : MonoBehaviour
             float t = elapsedTime / duration; // 0에서 1까지의 시간 비율
             contentTransform.anchoredPosition = Vector2.Lerp(startPos, endPos, t); // 선형 보간
         }
+        
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            LoadingController.LoadScene("StartScene");
+        }
     }
 }
