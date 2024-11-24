@@ -76,7 +76,7 @@ namespace System.Wave
                 int idx = colliders.IndexOf(trigger);
 
                 if (idx + 1 >= colliders.Count) return;
-                colliders[idx + 1].render.enabled = false;
+                colliders[idx + 1].renderer.enabled = false;
                 colliders[idx + 1].GetComponent<Collider2D>().isTrigger = true;
             }
             

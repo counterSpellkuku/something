@@ -80,7 +80,7 @@ namespace System.Wave
             mainMenuButton.gameObject.SetActive(true);
     }
     
-    private void RetryGame()
+    public void RetryGame()
     {
         // 현재 씬 다시 로드
         UnityEngine.SceneManagement.SceneManager.LoadScene(
@@ -88,7 +88,7 @@ namespace System.Wave
         );
     }
     
-    private void GoToMainMenu()
+    public void GoToMainMenu()
     {
         LoadingController.LoadScene("StartScene");    }
     }

@@ -29,18 +29,18 @@ namespace System.Wave {
                 boxCollider = gameObject.AddComponent<BoxCollider2D>();
             }
 
-            render = GetComponent<SpriteRenderer>();
+            renderer = GetComponent<SpriteRenderer>();
             boxCollider.isTrigger = true;
             complete = false;
 
             if (this.gameObject.name == "First")
             {
-                render.enabled = false;
+                renderer.enabled = false;
                 GetComponent<Collider2D>().isTrigger = true;
             }
             else {
                 Debug.Log(this.gameObject);
-                render.enabled = true;
+                renderer.enabled = true;
                 GetComponent<Collider2D>().isTrigger = false;
             }
 

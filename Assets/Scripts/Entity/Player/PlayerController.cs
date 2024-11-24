@@ -136,7 +136,9 @@ namespace Entity.Player {
         }
 
         IEnumerator Dash() {
-            KnockBack((Vector2)transform.position - moveInput, 8, 0.2f);
+            float sp = speed;
+
+            speed *= 5;
 
             Vector2 scale = transform.localScale;
 
@@ -145,6 +147,8 @@ namespace Entity.Player {
             yield return new WaitForSeconds(0.2f);
 
             transform.localScale = scale;
+
+            speed = sp;
         }
 
 
